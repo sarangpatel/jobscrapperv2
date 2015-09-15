@@ -1,0 +1,92 @@
+job titles
+============
+Specialist
+Administrator
+Manager
+Developer
+Designer
+Technician
+Director
+Architect
+Engineer
+Analyst
+Scientist
+Officer
+Office
+Press
+
+Representative
+Design
+
+=======================================
+ search for tags with one of these terms
+ pull data from that and all similar tags
+ ==========================================
+
+
+The idea is that someone will come to our site, enter the URL of their business’ page listing all of their job openings and we will 1) Save the page data, 2) Use a short list of job titles and scan for the html tag that houses the job titles 3) once we find the right tag with job titles, pull all job titles in the same tags
+[12-03-2015 22:03:57] Jamison Hill: Here is a sample list of job URLs
+[12-03-2015 22:04:04] Jamison Hill: https://nextdoor.com/jobs/
+
+https://jobs.lever.co/alation
+
+https://www.etsy.com/careers
+
+http://www.mobeam.com/careers/
+
+http://www.infusionsoft.com/careers
+
+https://www.godaddy.com/careers/opportunities
+
+http://pertino.com/careers
+
+https://www.kickstarter.com/jobs#openings
+
+http://hire.jobvite.com/CompanyJobs/Careers.aspx?k=JobListing&c=qFT9Vfwm
+
+https://ifttt.com/jobs
+
+https://hired.com/careers
+
+coming from : https://app.greenhouse.io/embed/job_board?for=hired&b=https://hired.com/careers
+
+I am looking for a developer that can help us accomplish the following workflow in a script of program (aka *System below):
+
+1) User enters the website URL of a company jobs page
+
+For example, a user might enter one of the following:
+~https://www.dropbox.com/jobs/all
+~https://evernote.com/careers/
+~http://www.opentable.com/careers/
+
+
+2) *System scans the URL for job titles (sample list provided to know what to scrape for - see attached. *This file is to help you RECOGNIZE job titles, not tell you what to scrape. If a job title is recognized, pull all titles/locations on that page regardless if the subsequently scraped titles are in the attached file or not.)
+
+3) *If system finds job titles - Scrapes the original job posting URL, job title, Location, (if applicable) 
+
+If system does not find the jobs, crawls that page for up to 40 hyperlinks, then check each hyperlink (up to 40 checked pages) for page with complete list of job titles
+
+4) *System returns the scraped jobs titles & location after the initial call is made in an XML format to easily be integrated into an application
+
+***This function would need to easily be integrated into another web-based product. 
+
+
+http://stackoverflow.com/questions/2313107/how-do-i-make-a-simple-crawler-in-php
+
+http://simplehtmldom.sourceforge.net/manual.htm#section_access
+
+
+Todos
+=========
+1 : flush data and after all scraping give button to download xml or flush xmls.
+2 : remove external linkss
+3 : remove img,jpegs links
+4 : check redirection 
+
+
+
+
+http://elance-odesk.com/careers
+
+http://hire.jobvite.com/CompanyJobs/Careers.aspx?c=qr29Vfwh&cs=9r8bVfwp&nl=0&jvresize=http://elance-odesk.com/sites/default/files/page_images/careers/FrameResize.html
+

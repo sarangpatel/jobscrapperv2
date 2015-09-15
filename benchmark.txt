@@ -1,0 +1,158 @@
+MYISAM :
+20:24 - 309
+20:30 - 437
+20:34 - 561
+20:43 - 866
+20:55 - 1504 
+9:03 - 1885
+9:07 - 1885
+9:11 - 1885
+9:19 - 1885
+9:25 - 1885
+9:30 - 1894
+9:36 - 1896
+9:38 - 1896
+9:43 - 1896;
+Queries locked
+40 record 1 min
+
+if checks
+job_tracker line : 23 array_merge
+model.php line no :31 not a valid array index
+
+
+innodb
+=======
+22:25 - 109
+22:35 - 1051
+22:42 - 1227
+22:43 - 1245 
+22:46 - 1319
+22:46 - 1340
+22:47 - 1358
+22:49 - 1406
+22:50 - 1421
+22:53 - 1569
+22:55 - 1569  1460 records in half hour
+22:57 - 1569
+22:58 : 1580
+23:01 - 1778 
+23:02 - 1833 
+23:03 - 1836
+23:06 - 1888 
+23:07 - 1897 
+23:08 - 1897 
+23:09 - 1985 
+23:10 - 2014 
+23:11 - 2080 
+23:13 - 2268 
+23:24 - 2514 (393 sites scraped),2400 records in one hour
+23:25 - 2514
+23:30 - 2514
+393 sites
+==========
+23:57 - 2556 
+23:58 -  
+23:59 -  
+12:05 : 2571
+12:06 : 2595
+12:07 : 2609 
+12:10 : 2615 ---- half hour 200 sites scrapped,1600 records
+12:12 - 2640
+12:13 - 2890
+12:20 - 3576  
+12:27 : 3790 
+12:31 - 4040
+12:33 : 4109
+=============
+12:36 :  4207 
+12:39 : 4458 
+12:43 : 4604
+1:01  : 5224 
+1:13  : 5620 till 855 sites scraped
+=============
+1:30 - 6529 
+1:33 - 6561  END SITE ID 998
+
+
+
+
+
+
+locked site
+https://www.amazon.jobs/ -  394
+www.alphasights.com/careers/what-we-do - 396
+http://celldex.com/about/careers.php (maxtime but worked lastly)
+start = set lates to this id = active =  0
+406
+5554
+5556
+5557
+5560
+18574
+18988
+end = set lates to this id = active =  0
+
+start = set lates to this id = active =  0
+https://angel.co/jobs
+end = set lates to this id = active =  0
+
+start - minute time consuming
+https://www.apcera.com/careers/
+http://callnow.com/#jobs
+https://www.facebook.com/dialog/send?app_id=132453076811032&link=https://angel.co/caspian-robotics/jobs&redirect_uri=https://angel.co/caspian-robotics/jobs
+http://www.castlehillgaming.com/careers/
+http://www.centritechnology.com/carrer/
+http://cerecor.com/about-us/careers.php
+https://chartio.com/jobs/
+https://chefsroll.com/jobs/hotjob
+https://circleup.com/jobs/
+http://patch.com/florida/clearwater/jobs
+http://civilianexposure.org/contact-us-join-the-fight/
+http://click-labs.com/careers/ (most time consuming)
+https://clippings.com/page/careers(most time consuming)
+http://cloud-media.com/careers/
+http://www.turner.com/careers
+http://cmdln.io/jobs/
+http://co.williams.com/careers/
+http://cmxhub.com/jobs/
+http://www.coca-colacompany.com/careers/ (most time consuming)
+https://codility.com/jobs/
+http://codetiburon.com/careers/
+http://evoqmd.com/#work
+http://collegeperks.com/#jobs
+http://jobs.colyarconsulting.com
+http://www.xfinity.com/corporate/about/careers/careers.html (most time consuming)
+http://comfedesigns.com/about/jobs/ (most time consuming)
+
+end - minute time consuming
+
+start = warning
+https://www.google.com/about/careers/lifeatgoogle/
+http://www.bluehost.com/careers
+https://www.google.com/about/careers/lifeatgoogle/
+https://www.facebook.com/careers/?ref=pf
+
+end - warning
+
+===============
+
+TODOs: 
+1 : Need to add time log for each scraping sites done
+2 : Remove site which are taking response time more than expected during( on load)
+3 : Removing content search and checking..
+4 : Need to check, DB team on entry of status "existed" job table
+
+8 sep 2015
+=============
+1 : total sec : 310 sec - 50 site
+2 : total sec : 257.56473207474 secs - 50 site (without content search)
+3 : total sec : 381.68583106995 secs - 50 site
+4 : total sec : 292.34272098541 secs - 50 site
+5 : total sec : 310.36875104904 secs - 50 site
+5 : total sec : 287.54444599152 secs - 50 site
+
+
+15 sep 2015
+============
+time taken for 300 site : 272 sec

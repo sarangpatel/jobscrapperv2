@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		<title>Job Details</title>
+		<link rel="stylesheet" href="./job-data_files/styles.css">
+		<script src="./job-data_files/jquery-1.11.3.min.js"></script>
+		<script src="./job-data_files/highcharts.js"></script>
+		<script src="./job-data_files/exporting.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="max-width-container">
+				<h3>Job Detail</h3>
+			</div>
+		</header>
+		<div class="max-width-container">
+			<div class="container">
+				<h1>Company</h1>
+				<ul id="small-details">
+					<li><a href="http://google.com/" target="_blank">Company url</a></li>
+					<li>Mountain View, CA</li>
+					<li>Founded 2000</li>
+					<li>1000-5000 employees</li>
+				</ul>
+			</div>
+			<h2>JOBS</h2>
+			<div class="details-container">
+				<!-- ***** CHART ***** -->
+				<div class="ind-details-container whole">
+					<div class="actual-details-container">
+						<div class="box-heading">Recent Jobs Activity</div>
+						<div class="box-content graph">Jobs graph</div>
+						<div id=  "container"></div>
+					</div>
+				</div>
+			</div>
+			<table>
+				<tbody>
+					<tr class="table-heading">
+						<th>Opening</th>
+						<th>Location</th>
+						<th>Duration</th>
+					</tr>
+					<tr>
+						<td><a href="http://offerletter.com/job-data.html#" target="blank">UX Designer</a></td>
+						<td>Mountain View, CA</td>
+						<td>12d, 02h, 21m, 34s</td>
+					</tr>
+					<tr>
+						<td><a href="http://offerletter.com/job-data.html#" target="blank">Software Engineer</a></td>
+						<td>Mountain View, CA</td>
+						<td>12d, 02h, 21m, 34s</td>
+					</tr>
+					<tr>
+						<td><a href="http://offerletter.com/job-data.html#" target="blank">Data Scientist</a></td>
+						<td>Mountain View, CA</td>
+						<td>12d, 02h, 21m, 34s</td>
+					</tr>
+					<tr>
+						<td><a href="http://offerletter.com/job-data.html#" target="blank">Video Producer</a></td>
+						<td>Mountain View, CA</td>
+						<td>12d, 02h, 21m, 34s</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="details-container">
+				<!-- ***** # OF OPENINGS ***** -->
+				<div class="ind-details-container">
+					<div class="actual-details-container">
+						<div class="box-heading"># of Openings</div>
+						<div class="box-content">134</div>
+					</div>
+				</div>
+				<!-- ***** CAREERS URL ***** -->
+				<div class="ind-details-container">
+					<div class="actual-details-container">
+						<div class="box-heading">Careers URL</div>
+						<div class="box-content"><a href="http://offerletter.com/job-data.html#" target="blank">jobs.google.com</a><a href="http://offerletter.com/job-data.html#" target="blank"></a></div>
+					</div>
+				</div>
+				<!-- ***** ATS ***** -->
+				<div class="ind-details-container">
+					<div class="actual-details-container">
+						<div class="box-heading">ATS</div>
+						<div class="box-content">none</div>
+					</div>
+				</div>
+				<!-- ***** RECRUITING EMAIL ***** -->
+				<div class="ind-details-container">
+					<div class="actual-details-container">
+						<div class="box-heading">Recruiting Email</div>
+						<div class="box-content">jobs@google.com</div>
+					</div>
+				</div>
+			</div>
+			<h2>COMPANY</h2>
+			<div class="details-container">
+				<!-- ***** Description ***** -->
+				<div class="ind-details-container whole">
+					<div class="actual-details-container">
+						<div class="box-heading">Company Description</div>
+						<div class="box-content">This is where the short or long description of the company could go. This is where the short or long description of the company could go. This is where the short or long description of the company could go. This is where the short or long description of the company could go. This is where the short or long description of the company could go.</div>
+					</div>
+				</div>
+				<!-- ***** WEBSITE ***** -->
+				<div class="ind-details-container">
+					<div class="actual-details-container">
+						<div class="box-heading">Website</div>
+						<div class="box-content"><a href="http://offerletter.com/job-data.html#" target="blank">google.com</a></div>
+					</div>
+				</div>
+				<!-- ***** HEADQUARTERS ***** -->
+				<div class="ind-details-container">
+					<div class="actual-details-container">
+						<div class="box-heading">Headquarters</div>
+						<div class="box-content">Mountain View, CA</div>
+					</div>
+				</div>
+				<!-- ***** YEAR FOUNDED ***** -->
+				<div class="ind-details-container">
+					<div class="actual-details-container">
+						<div class="box-heading">Year Founded</div>
+						<div class="box-content">2000</div>
+					</div>
+				</div>
+				<!-- ***** SIZE ***** -->
+				<div class="ind-details-container">
+					<div class="actual-details-container">
+						<div class="box-heading"># of Employees</div>
+						<div class="box-content">+10,000</div>
+					</div>
+				</div>
+				<!-- ***** EMAILS ***** -->
+				<div class="ind-details-container">
+					<div class="actual-details-container">
+						<div class="box-heading">Email(s)</div>
+						<div class="box-content">nicholas.hill@google.com</div>
+					</div>
+				</div>
+				<!-- ***** PHONE NUMBER ***** -->
+				<div class="ind-details-container">
+					<div class="actual-details-container">
+						<div class="box-heading">Phone</div>
+						<div class="box-content">1-800-CALL-GOOGLE</div>
+					</div>
+				</div>
+			</div>
+			<h2>SOCIAL</h2>
+			<div class="details-container">
+				<!-- ***** LINKEDIN ***** -->
+				<div class="ind-details-container">
+					<div class="actual-details-container">
+						<div class="box-heading">Linkedin</div>
+						<div class="box-content"><a href="http://offerletter.com/job-data.html#" target="blank">linkedin.com/company/google</a></div>
+					</div>
+				</div>
+				<!-- ***** FACEBOOK ***** -->
+				<div class="ind-details-container">
+					<div class="actual-details-container">
+						<div class="box-heading">Facebook</div>
+						<div class="box-content"><a href="http://offerletter.com/job-data.html#" target="blank">facebook.com/google</a></div>
+					</div>
+				</div>
+				<!-- ***** TWITTER ***** -->
+				<div class="ind-details-container">
+					<div class="actual-details-container">
+						<div class="box-heading">Twitter</div>
+						<div class="box-content"><a href="http://offerletter.com/job-data.html#" target="blank">twitter.com/google</a></div>
+					</div>
+				</div>
+				<!-- ***** YELP ***** -->
+				<div class="ind-details-container">
+					<div class="actual-details-container">
+						<div class="box-heading">Yelp</div>
+						<div class="box-content"><a href="http://offerletter.com/job-data.html#" target="blank">yelp.com/google</a></div>
+					</div>
+				</div>
+				<!-- ***** GLASSDOOR ***** -->
+				<div class="ind-details-container">
+					<div class="actual-details-container">
+						<div class="box-heading">Glassdoor</div>
+						<div class="box-content"><a href="http://offerletter.com/job-data.html#" target="blank">glassdoor.com/google</a></div>
+					</div>
+				</div>
+				<!-- ***** AngelList ***** -->
+				<div class="ind-details-container">
+					<div class="actual-details-container">
+						<div class="box-heading">AngelList</div>
+						<div class="box-content"><a href="http://offerletter.com/job-data.html#" target="blank">angel.co/google</a></div>
+					</div>
+				</div>
+				<!-- ***** Crunchbase ***** -->
+				<div class="ind-details-container">
+					<div class="actual-details-container">
+						<div class="box-heading">CrunchBase</div>
+						<div class="box-content"><a href="http://offerletter.com/job-data.html#" target="blank">cruncbase.com/google</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			$(function () {
+			      $('#container').highcharts({
+			          chart: {
+			              type: 'area'
+			          },
+			          exporting: { enabled: false },
+			          legend: {
+			          enabled: false
+			      },
+			          colors: ['#D65110', '#AF7F24', '#263249', '#5F7F90', '#D9CDB6'],
+			          title: {
+			              text: ''
+			          },
+			          xAxis: {
+			            allowDecimals:false,
+			                  min: .5,
+			                  max: 5.5,
+			            categories: [
+			                'Thu 2/14',
+			                'Fri 2/15',
+			                'Sat 2/16',
+			                'Sun 2/17',
+			                'Mon 2/18',
+			                'Tue 2/19',
+			                'Wed 2/20'
+			              ],
+			            },
+			          yAxis: {
+			          gridLineWidth: 0,
+			          minorGridLineWidth: 0,
+			          title: {text: ''},
+			            
+			          labels: {
+			              enabled: false
+			          }
+			      },
+			          credits: {
+			              enabled: false
+			          },
+			          plotOptions: {
+			              series: {
+			                  stacking: 'normal'
+			              }
+			          },
+			          series: [{
+			              name: '',
+			              data: [5, 1, -5, 7, 2, 12, 14]
+			          }]
+			      });
+			  });
+			  
+		</script>
+	</body>
+</html>

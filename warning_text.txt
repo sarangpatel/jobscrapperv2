@@ -1,0 +1,98 @@
+https://www.facebook.com/careers/?ref=pf
+
+Warning: array_merge(): Argument #1 is not an array in C:\xampp\htdocs\jobscraperv2\job_tracker.php on line 27
+
+Warning: Invalid argument supplied for foreach() in C:\xampp\htdocs\jobscraperv2\model.php on line 31
+https://www.shopify.com/careers
+https://www.facebook.com/careers/?ref=pf
+
+Warning: array_merge(): Argument #1 is not an array in C:\xampp\htdocs\jobscraperv2\job_tracker.php on line 27
+
+Warning: Invalid argument supplied for foreach() in C:\xampp\htdocs\jobscraperv2\model.php on line 31
+https://www.facebook.com/careers/?ref=pf
+
+Warning: array_merge(): Argument #1 is not an array in C:\xampp\htdocs\jobscraperv2\job_tracker.php on line 27
+
+Warning: Invalid argument supplied for foreach() in C:\xampp\htdocs\jobscraperv2\model.php on line 31
+https://www.facebook.com/careers/?ref=pf
+
+Warning: array_merge(): Argument #1 is not an array in C:\xampp\htdocs\jobscraperv2\job_tracker.php on line 27
+
+Warning: Invalid argument supplied for foreach() in C:\xampp\htdocs\jobscraperv2\model.php on line 31
+http://appsdome.in/#hiring
+http://www.appscale.com/careers/
+http://jobs.raytheon.com/
+http://www.microsoft.com/careers
+http://www.microsoft.com/careers
+
+Warning: array_merge(): Argument #1 is not an array in C:\xampp\htdocs\jobscraperv2\job_tracker.php on line 27
+
+Warning: Invalid argument supplied for foreach() in C:\xampp\htdocs\jobscraperv2\model.php on line 31
+http://appsplit.com/jobs
+http://appsplit.com/jobs
+
+Warning: array_merge(): Argument #1 is not an array in C:\xampp\htdocs\jobscraperv2\job_tracker.php on line 27
+
+Warning: Invalid argument supplied for foreach() in C:\xampp\htdocs\jobscraperv2\model.php on line 31
+http://apptimize.com/company/jobs/
+http://www.microsoft.com/careers
+
+Warning: array_merge(): Argument #1 is not an array in C:\xampp\htdocs\jobscraperv2\job_tracker.php on line 27
+
+Warning: Invalid argument supplied for foreach() in C:\xampp\htdocs\jobscraperv2\model.php on line 31
+https://www.bespokepost.com/careers
+https://angel.co/fleex/jobs
+http://besuccess.com/join-us
+http://observer.com/jobs/
+http://observer.com/jobs/
+
+Warning: array_merge(): Argument #1 is not an array in C:\xampp\htdocs\jobscraperv2\job_tracker.php on line 27
+
+Warning: Invalid argument supplied for foreach() in C:\xampp\htdocs\jobscraperv2\model.php on line 31
+https://www.binary.com/careers?l=EN
+https://gradberry.com/jobs/
+http://www.ctrlshift.com/join-us/what-we-believe-in
+https://BetterDoctor.com/careers
+https://www.google.com/about/careers/lifeatgoogle/
+
+Warning: array_merge(): Argument #1 is not an array in C:\xampp\htdocs\jobscraperv2\job_tracker.php on line 27
+
+Warning: Invalid argument supplied for foreach() in C:\xampp\htdocs\jobscraperv2\model.php on line 31
+http://betakit.com/jobs/
+https://about.twitter.com/careers
+https://www.bidpress.com/careers
+http://beprosoftware.com/jobs
+https://www.facebook.com/careers/?ref=pf
+
+Warning: array_merge(): Argument #1 is not an array in C:\xampp\htdocs\jobscraperv2\job_tracker.php on line 27
+
+Warning: Invalid argument supplied for foreach() in C:\xampp\htdocs\jobscraperv2\model.php on line 31
+
+
+
+http://www.HugeDomains.com/
+https://careers.yahoo.com/
+
+Warning: array_merge(): Argument #1 is not an array in C:\xampp\htdocs\jobscraperv2\job_tracker.php on line 27
+
+Warning: Invalid argument supplied for foreach() in C:\xampp\htdocs\jobscraperv2\model.php on line 31
+https://angel.co/canvasjs/jobs
+http://www.hugedomains.com/
+
+Warning: array_merge(): Argument #1 is not an array in C:\xampp\htdocs\jobscraperv2\job_tracker.php on line 27
+
+Warning: Invalid argument supplied for foreach() in C:\xampp\htdocs\jobscraperv2\model.php on line 31
+http://www.capitalfloat.com/careers.html
+http://www.hugedomains.com/
+
+Warning: array_merge(): Argument #1 is not an array in C:\xampp\htdocs\jobscraperv2\job_tracker.php on line 27
+
+Warning: Invalid argument supplied for foreach() in C:\xampp\htdocs\jobscraperv2\model.php on line 31
+http://www.hugedomains.com/
+
+https://www.facebook.com/careers/?ref=pf
+
+http://www.bluehost.com/careers
+http://www.bluehost.com/careers
+http://www.hugedomains.com/
+https://careers.yahoo.com/
