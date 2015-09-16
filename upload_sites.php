@@ -12,12 +12,14 @@ require($dir.'db.php');
 if (ob_get_level() == 0) ob_start();
 
 $time_start = microtime(true);
-$jobs = fopen("sites.csv", 'r');
+//$jobs = fopen("sites.csv", 'r');
+$jobs = fopen("sites_unique.csv", 'r');
+
 while($row = fgetcsv($jobs)){
-	if(!empty($row[1])){
-		$url = trim($row[1]);
+	if(!empty($row[2])){
+		$url = trim($row[2]);
 		insertSite($row);
-		echo 'Site uploaded : '. $row[0]. '<br />';
+		echo 'Site uploaded : '. $row[1]. '<br />';
 		ob_flush();
 		flush();
 	}//end if job url not empty 
@@ -31,8 +33,8 @@ exit;
 
 function insertSite($data){
 	array_walk($data, 'escapeString');
-	$query = "INSERT INTO sites (site_url,job_url,job_email,contact_email,linkedin,facebook,twitter) VALUES ".
-			" ('$data[0]','$data[1]','$data[2]','$data[3]','$data[4]','$data[5]','$data[6]');";
+	$query = "INSERT INTO sites (site_url,job_url,job_email,contact_email,linkedin,facebook,twitter,active) VALUES ".
+			" ('$data[1]','$data[2]','$data[3]','$data[4]','$data[5]','$data[6]','$data[7]',1);";
 	mysql_query($query);
 }
 
