@@ -125,8 +125,8 @@ class Model{
 
 	function getActiveSites(){
 		//$sql = "SELECT * from sites WHERE active = 1 and id > 1000 order by id"; BIG Benchmarking
-		$sql = "SELECT * from sites WHERE active = 1 and id < 301 order by id";
-		//$sql = "SELECT * from sites WHERE active = 1 and id = 74 order by id";
+		//$sql = "SELECT * from sites WHERE active = 1 and id < 5001 order by id";
+		$sql = "SELECT * from sites WHERE active = 1 and id = 21150 order by id";
 		$result = mysql_query  ($sql);
 		$sites = array();
 		while($row = mysql_fetch_assoc($result)){
@@ -151,8 +151,8 @@ class Model{
 		foreach($jobData as $job){
 			$job[0] = mysql_real_escape_string($job[0]);
 			$job[1] = mysql_real_escape_string($job[1]);
-			$sql = "INSERT INTO jobs (site_id,job_title,job_url,job_status) VALUES ".
-				" ($site_id,'{$job[0]}','{$job[1]}','$status');";
+			$sql = "INSERT INTO jobs (site_id,job_title,job_url,created_on,job_status) VALUES ".
+				" ($site_id,'{$job[0]}','{$job[1]}',NOW(),'$status');";
 			mysql_query($sql);
 			$last_inserted_id = mysql_insert_id(); 
 			if($status == 'new'){
