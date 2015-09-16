@@ -1,5 +1,4 @@
 <?php
-//echo 'hello';
 error_reporting(0);
 ini_set('max_execution_time', 0);
 $time_start = microtime(true);
@@ -14,7 +13,6 @@ $model= new Model();
 $sites = $model->getActiveSites();
 
 //if (ob_get_level() == 0) ob_start();
-print_r($sites);
 foreach($sites as $sindxK => $site){
 	$site_scrap_time_start = microtime(true);
 	//$model->deleteTodaysJobActivities($site['id'],date('Y-m-d',time()));
@@ -36,14 +34,11 @@ foreach($sites as $sindxK => $site){
 	//ob_flush();
 	//flush();
 	$site_scrap_time_start = microtime(true);
-	error_log('sarnng'. print_r($output,TRUE),dirname(__FILE__).'/scrap_log.txt');
 	$lastScrapedSiteJobs = $model->getSiteJobs($site['id']);
 	//checking currently scraped jobs with previously scraped jobs
 	foreach($lastScrapedSiteJobs as $ljob){
 		$jobExpired = true;
 		foreach($output[1] as $outputIndx => $job){
-			echo strtolower(trim($job[0])) . '==' . strtolower(trim($ljob['job_title']))."\n";
-                        error_log(strtolower($job[0]).'='.strtolower($log['job_title']),dirname(__FILE__).'/scrap_log.txt');
 			if(strtolower(trim($job[0])) == strtolower(trim($ljob['job_title']))){ //if existed
 				$model->updateJobStatus($site['id'],$ljob['id'],'open');
 				unset($output[1][$outputIndx]); //remove from checking pool
@@ -73,7 +68,7 @@ foreach($sites as $sindxK => $site){
 
 $time_end = microtime(true);
 $time = $time_end - $time_start;
-echo  '<br />' .  $time . ' secs';
+//echo  '<br />' .  $time . ' secs';
 error_log('TOTAL SCRAPED TIME on DAY  ' . date('Y-m-d H:i:s') . ' is ' .   $time  . " secs \n", 3, dirname(__FILE__).'/scrap_log.txt');
 
 exit;
@@ -122,7 +117,6 @@ function crawl_page($url,$depth = 1)
 	{
 	//echo $url;
 	$csv_file = $_POST['csv_file'];
-	echo $csv_file;
 	//if (ob_get_level() == 0) ob_start();
 	static $seen = array();
 	if (isset($seen[$url]) || $depth === 0) {
@@ -131,19 +125,15 @@ function crawl_page($url,$depth = 1)
 	//echo 'Scanned URL : ' . $url. '<br /><br /><br />';
 	$seen[$url] = true;
 	$output = array();
-	//echo 'hello';	
 	$dom = new DOMDocument('1.0');
-	//var_dump($dom);
 	$dom->loadHTMLFile($url);
 	
 	$anchors = $dom->getElementsByTagName('a');
-	//print_R($anchors);
-	foreach ($anchors as $element) {echo 'got achors';
+	foreach ($anchors as $element) {
 		$str='';
 		$href = $element->getAttribute('href');
-		echo $href. "\n";
 		//if(validURL($href)){
-			echo dirname(__FILE__).'/'. $csv_file. ".csv";
+			//echo dirname(__FILE__).'/'. $csv_file. ".csv";
 			$job_title_file = fopen(dirname(__FILE__).'/'.$csv_file .".csv", 'r');
 			//var_dump($job_title_file);
 			//$job_title_file = fopen('job_titles.csv', 'r');
@@ -155,7 +145,7 @@ function crawl_page($url,$depth = 1)
 				if(!empty($node->nodeValue) && trim($node->nodeValue) != '' && $node->nodeName != 'img'  ){
 					$o_job_title = '';
 					while($row = fgetcsv($job_title_file)){
-						echo   $row[0] . '===' . $node->nodeValue . '<br />';
+						//echo   $row[0] . '===' . $node->nodeValue . '<br />';
 						//$match	= strripos( $node->nodeValue,$row[0]);
 						//if($match !== false){
 						if(preg_match("/\b". $row[0] . "\b/i", $node->nodeValue)){
