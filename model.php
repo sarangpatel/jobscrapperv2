@@ -147,6 +147,7 @@ class Model{
 		return $jobs;
 	}
 
+
 	function addNewJobs($site_id,$jobData,$status){
 		foreach($jobData as $job){
 			$job[0] = mysql_real_escape_string($job[0]);
