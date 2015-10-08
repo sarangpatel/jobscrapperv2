@@ -10,7 +10,11 @@ require($dir.'model.php');
 $model= new Model();
 $site_url = $_GET['site_url'];
 //echo $site_url;
-if($_POST['action'] == 'site_data'){
+if($_GET['action'] == 'site'){
+	$sites = $model->getActiveSites();
+	$sites_job_count = $model->getActiveSitesWithJobs();
+	//pr($sites_job_count);
+	require_once('html/site.php');
 }else{
 	$site_jobs = $model->displaySiteJobs($site_url);
 	require_once('html/home.php');

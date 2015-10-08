@@ -122,6 +122,18 @@ class Model{
 	
 
 
+	function getActiveSitesWithJobs(){
+		$previous_day = date('Y-m-d',time()-3600*24);
+
+		$sql = "SELECT s.id as site_id,s.site_url,jc.recorded_on, jc.open_jobs,jc.new_jobs,jc.expired_jobs from sites s left join job_count jc on jc.site_id = s.id WHERE s.active = 1 and s.id < 10001 AND jc.recorded_on BETWEEN '$previous_day' AND '$previous_day 23:59:59' order by s.id";
+		$result = mysql_query  ($sql);
+		$sites = array();
+		while($row = mysql_fetch_assoc($result)){
+			$sites[$row['site_id']] = $row;
+		}
+		mysql_free_result($result);
+		return $sites;
+	}
 
 	function getActiveSites(){
 		$sql = "SELECT * from sites WHERE active = 1 and id < 10001 order by id";
