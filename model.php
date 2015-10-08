@@ -124,8 +124,8 @@ class Model{
 
 
 	function getActiveSites(){
-		//$sql = "SELECT * from sites WHERE active = 1 and id < 5001 order by id";
-		$sql = "SELECT * from sites WHERE active = 1 and id = 74 order by id";
+		$sql = "SELECT * from sites WHERE active = 1 and id < 10001 order by id";
+		//$sql = "SELECT * from sites WHERE active = 1 and id = 74 order by id";
 		$result = mysql_query  ($sql);
 		$sites = array();
 		while($row = mysql_fetch_assoc($result)){
