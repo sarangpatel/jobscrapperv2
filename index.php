@@ -15,6 +15,13 @@ if($_GET['action'] == 'site'){
 	$sites_job_count = $model->getActiveSitesWithJobs();
 	//pr($sites_job_count);
 	require_once('html/site.php');
+}else if($_GET['action'] == 'job'){
+	$site_id = $_GET['site_id'];
+	$sites = $model->getActiveSites();
+	$s_id = empty($site_id) ? $sites[0]['id'] : $site_id;
+	$site_jobs = $model->getSiteJob($s_id);
+	//pr($site_jobs);exit;
+	require_once('html/job.php');
 }else{
 	$site_jobs = $model->displaySiteJobs($site_url);
 	require_once('html/home.php');

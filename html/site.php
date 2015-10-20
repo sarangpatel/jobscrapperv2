@@ -31,6 +31,8 @@
 						<th>Site ID</th>
 						<th>Site URL</th>
 						<th>Open Jobs</th>
+						<th>New Jobs</th>
+						<th>Closed Jobs</th>
 						<th>Scraped on</th>
 					</tr>
 				</thead>
@@ -40,6 +42,8 @@
 						<th>Site ID</th>
 						<th>Site URL</th>
 						<th>Open Jobs</th>
+						<th>New Jobs</th>
+						<th>Closed Jobs</th>
 						<th>Scraped on</th>
 					</tr>
 				</tfoot>
@@ -49,7 +53,9 @@
 					<tr>
 						<td><?php echo $site['id']; ?></td>
 						<td><a href = "index.php?site_url=<?php echo $site['site_url']; ?>"  target = "_blank"><?php echo $site['site_url']; ?></a></td>
-						<td><?php echo !empty($sites_job_count[$site['id']]) ?  $sites_job_count[$site['id']]['open_jobs'] + $sites_job_count[$site['id']]['new_jobs'] : 'NA' ;?></td>
+						<td><?php echo !empty($sites_job_count[$site['id']]) ?  $sites_job_count[$site['id']]['open_jobs'] : 'NA' ;?></td>
+						<td><?php echo !empty($sites_job_count[$site['id']]) ?  $sites_job_count[$site['id']]['new_jobs'] : 'NA' ;?></td>
+						<td><?php echo !empty($sites_job_count[$site['id']]) ?  $sites_job_count[$site['id']]['closed_jobs'] : 'NA' ;?></td>
 						<td><?php echo !empty($sites_job_count[$site['id']]) ?  $sites_job_count[$site['id']]['recorded_on'] : 'NA' ;?></td>
 					</tr>
 					<?php } ?>

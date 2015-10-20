@@ -162,6 +162,18 @@ class Model{
 		return $jobs;
 	}
 
+	function getSiteJob($site_id){
+		$sql = "SELECT j.id,s.site_url,j.site_id,j.job_title,j.job_url,j.created_on,j.updated_on,j.job_status from jobs j INNER JOIN 
+				sites s on s.id = j.site_id WHERE j.site_id = $site_id AND j.job_status != 'expired'; ";
+		$result = mysql_query  ($sql);
+		$jobs = array();
+		while($row = mysql_fetch_assoc($result)){
+			$jobs[] = $row;
+		}
+		mysql_free_result($result);
+		return $jobs;
+	}
+
 
 	function addNewJobs($site_id,$jobData,$status){
 		foreach($jobData as $job){
