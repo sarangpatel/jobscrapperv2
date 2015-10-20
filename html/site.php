@@ -55,7 +55,7 @@
 						<td><a href = "index.php?site_url=<?php echo $site['site_url']; ?>"  target = "_blank"><?php echo $site['site_url']; ?></a></td>
 						<td><?php echo !empty($sites_job_count[$site['id']]) ?  $sites_job_count[$site['id']]['open_jobs'] : 'NA' ;?></td>
 						<td><?php echo !empty($sites_job_count[$site['id']]) ?  $sites_job_count[$site['id']]['new_jobs'] : 'NA' ;?></td>
-						<td><?php echo !empty($sites_job_count[$site['id']]) ?  $sites_job_count[$site['id']]['closed_jobs'] : 'NA' ;?></td>
+						<td><?php echo !empty($sites_job_count[$site['id']]) ?  $sites_job_count[$site['id']]['expired_jobs'] : 'NA' ;?></td>
 						<td><?php echo !empty($sites_job_count[$site['id']]) ?  $sites_job_count[$site['id']]['recorded_on'] : 'NA' ;?></td>
 					</tr>
 					<?php } ?>
