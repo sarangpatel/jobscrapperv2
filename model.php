@@ -1,4 +1,5 @@
 <?php
+
 class Model{
 	
 	public function Model(){
@@ -174,6 +175,56 @@ class Model{
 		return $jobs;
 	}
 
+	function getAjaxTableData(){
+		$start = $_GET['start'];
+		$length = $_GET['length'];
+		$search = $_GET['search']['value'];
+		$draw = $_GET['draw'];
+		$column_index = $_GET['order'][0]['column']; //column indx
+		$order = $_GET['order'][0]['dir']; //order
+		
+		$columns[0] = "j.job_title";
+		$columns[1] = "s.site_url";
+		$columns[2] = "j.updated_on";
+		$search_str = '';
+		if(!empty($search)){$search_str =  " AND (LOWER(j.job_title) like LOWER('%$search%') OR LOWER(s.site_url) like LOWER('%$search%') ) "; }
+
+
+		$sql_total = "SELECT count(1) from jobs order by id asc; ";
+		$result = mysql_query($sql_total);
+		$total_records = mysql_num_rows($result);
+		
+		$sql_filtered = "SELECT j.id,s.site_url,j.site_id,j.job_title,j.job_url,j.created_on,j.updated_on,j.job_status from jobs j INNER JOIN 
+				sites s on s.id = j.site_id WHERE  j.job_status != 'expired' $search_str order by id asc ; ";
+		//echo $sql_filtered;
+		$result = mysql_query($sql_filtered);
+		$filtered_records = mysql_num_rows($result);
+		
+		$sql = "SELECT j.id,s.site_url,j.site_id,j.job_title,j.job_url,j.created_on,j.updated_on,j.job_status from jobs j INNER JOIN 
+				sites s on s.id = j.site_id WHERE  j.job_status != 'expired' $search_str order by {$columns[$column_index]} $order limit $start,$length; ";
+		$result = mysql_query  ($sql);
+		$jobs = array();
+		while($row = mysql_fetch_assoc($result)){
+
+			$diff = abs(strtotime($row['updated_on']) - strtotime($row['created_on']));
+			$years = floor($diff / (365*60*60*24));
+			$months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
+			$days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
+
+			$rw = array();
+			$rw[] = "<a href = '{$row[job_url]}'  target = '_blank'>{$row[job_title]}</a>";
+			$rw[] = "<a href = 'index.php?site_url={$row[site_url]}'  target = '_blank'>{$row[site_url]}</a>";
+			$rw[] =  $days . ' days old';
+
+			$jobs[] = $rw;
+		}
+		mysql_free_result($result);
+		$data['draw'] = $draw;
+		$data['data'] = $jobs;
+		$data['recordsTotal'] = $total_records;
+		$data['recordsFiltered'] = $filtered_records;
+		return $data;
+	}
 
 	function addNewJobs($site_id,$jobData,$status){
 		foreach($jobData as $job){

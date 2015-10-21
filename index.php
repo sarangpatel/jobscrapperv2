@@ -22,6 +22,11 @@ if($_GET['action'] == 'site'){
 	$site_jobs = $model->getSiteJob($s_id);
 	//pr($site_jobs);exit;
 	require_once('html/job.php');
+}else if($_GET['action'] == 'ajax_table'){
+	//pr($_GET);exit;
+	$data = $model->getAjaxTableData();
+	echo json_encode($data);
+	exit;
 }else{
 	$site_jobs = $model->displaySiteJobs($site_url);
 	require_once('html/home.php');
