@@ -65,7 +65,7 @@
 					"processing": true,
 					"serverSide": true,
 					"ajax": {
-						"url": "index.php?action=ajax_table",
+						"url": "http://162.243.140.68/jobscrapperv2/jobscrapperv2/index.php?action=ajax_table",
 						"data": function ( d ) {
 							//d.myKey = "myValue";
 							// d.custom = $('#myInput').val();
