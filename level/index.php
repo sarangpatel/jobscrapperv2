@@ -25,20 +25,25 @@ if($_POST['action'] == 'scrape'){
 
 function crawl_page($url,$depth = 1)
 {
+	//echo '<PRE>';
+	//if (ob_get_level() == 0) ob_start();
 	require_once 'vendor/autoload.php';
-	$job_title_file = fopen("job_titles", 'r');
 
 	// Initiate crawl
 	$crawler = new \Arachnid\Crawler($url, $depth);
 	$crawler->traverse();
 	// Get link data
 	$links = $crawler->getLinks();
+	//print_r($links);
 	foreach($links as $lnk => $link){
+		//print_r($link['links_text']); '<br />';
+		$job_title_file = fopen("job_titles.csv", 'r');
 		if(!empty($link['links_text'])){
 			foreach($link['links_text'] as $tx){
 				while($row = fgetcsv($job_title_file)){
+					//echo $lnk . '==='. $tx . '===' .  $row[0] . '<br />';
 					if(preg_match("/\b". $row[0] . "\b/i", $tx)){
-						echo $lnk . '==='. $tx . '===' .  $row[0] . '<br />';
+						//echo $lnk . '==='. $tx . '===' .  $row[0] . '<br />';
 						$o_job_title = $tx ;
 						break;
 					}
@@ -48,8 +53,8 @@ function crawl_page($url,$depth = 1)
 				}
 			}//for link text
 		}//empty links_text
+		fclose($job_title_file);
 	}//for each link
-	fclose($job_title_file);
 	return $output;
 }//end function
 
