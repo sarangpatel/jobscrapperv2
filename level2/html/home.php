@@ -47,7 +47,7 @@ input[type="submit"]{
 			<form method = "POST" id = "form-scraper">
 				<div>Enter URL :</div>
 				<!-- <div><input type = "text"  name = "url" value = "https://www.dropbox.com/jobs/all" /></div>
- -->				<div><input type = "text"  name = "url"  /></div>
+ -->				<div><input type = "text"  name = "url" value = "https://www.airbnb.com/careers/" /></div>
 				<div class = "err_msg" style = "display:none"></div>
 				<div>&nbsp;</div>
 				<!--  <div>Select Level:	<span class = "small"></span></div>
