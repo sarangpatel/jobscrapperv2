@@ -50,16 +50,16 @@ input[type="submit"]{
  -->				<div><input type = "text"  name = "url"  /></div>
 				<div class = "err_msg" style = "display:none"></div>
 				<div>&nbsp;</div>
-				<div>Select Level:	<span class = "small"></span></div>
+				<!--  <div>Select Level:	<span class = "small"></span></div>
 				<div>
 					<select name = "level_deep">
-						<option value = "2">1 level deep</option>
-						<option value = "3">2 level deep</option>
-						<option value = "4">3 level deep</option>
-						<option value = "5">4 level deep</option>
-						<option value = "6">5 level deep</option>
+						<option value = "1">1 level deep</option>
+						<option value = "2">2 level deep</option>
+						<option value = "3">3 level deep</option>
+						<option value = "4">4 level deep</option>
+						<option value = "5">5 level deep</option>
 					</select>
-				</div>
+				</div> -->
 				<div>&nbsp;</div>
 				<div><input type = "submit" value = "Scrape" name = "submit" /></div>
 				<input type = "hidden" value = "scrape" name = "action" />
