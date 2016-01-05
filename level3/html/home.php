@@ -23,7 +23,7 @@ input[type="text"]{
 	border:1px solid #c1c1c1;
 }
 
-input[type="submit"]{
+input[type="submit"],input[type="button"]{
 	padding:6px;
 	width:30%;
 	cursor:pointer;
@@ -61,7 +61,7 @@ input[type="submit"]{
 					</select>
 				</div> -->
 				<div>&nbsp;</div>
-				<div><input type = "submit" value = "Scrape" name = "submit" /></div>
+				<div><input type = "submit" value = "Scrape" name = "submit" /> &nbsp; <input type = "button" value = "Reset" name = "reload_page" onclick = "location.reload(true)" /></div>
 				<input type = "hidden" value = "scrape" name = "action" />
 				<div>&nbsp;</div>
 				<div id = "scrap_urls"></div>
