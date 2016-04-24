@@ -40,34 +40,35 @@
 				        </div>
 						<?php } unset($_SESSION['msg']); ?>
 
-                    <div class="col-lg-12">
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-hover table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Receipt No.</th>
-                                        <th>Name</th>
-                                        <th>Added on</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-									<?php
-									while ($row = mysql_fetch_assoc($result)) { ?>
+						<div class="col-lg-12">
+							<div class="table-responsive">
+								<table class="table table-bordered table-hover table-striped">
+									<thead>
 										<tr>
-											<td><?php echo $row['name'];?></td>
-											<td><?php echo $row['status'] ? 'Active': 'Deactive';?></td>
-											<td><?php echo $row['added_on'];?></td>
-											<!-- <td><a href = "index.php?action=manage_questions&quiz_id=<?php echo $row['quiz_id']; ?>">Manage Questions</a> | <a href = "index.php?action=delete_quiz&quiz_id=<?php echo $row['quiz_id']; ?>">Delete</a> | <a href = "index.php?action=quiz_actdeact&quiz_id=<?php echo $row['quiz_id']; ?>&status=<?php echo $row['status']? '0' : '1'; ?>"><?php echo $row['status'] ? 'Deactivate' : 'Activate'; ?></a></td> -->
-											<td><a href = "index.php?action=add_receipt">Add Receipt</a> | <a href = "index.php?action=delete_receipt&rec_id=<?php echo $row['id']; ?>">Delete</a> | 
-											<a href = "index.php?action=add_receipt">Preview Receipt</a>
-											</td>
+											<th>ID</th>
+											<th>Receipt No.</th>
+											<th>Name</th>
+											<th>Added on</th>
+											<th>Action</th>
 										</tr>
-									<?php } mysql_free_result ($result); ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+									</thead>
+									<tbody>
+										<?php
+										while ($row = mysql_fetch_assoc($result)) { ?>
+											<tr>
+												<td><?php echo $row['id'];?></td>
+												<td><?php echo $row['ref_no'];?></td>
+												<td><?php echo $row['full_name']; ?></td>
+												<td><?php echo $row['added_on'];?></td>
+												<!-- <td><a href = "index.php?action=manage_questions&quiz_id=<?php echo $row['quiz_id']; ?>">Manage Questions</a> | <a href = "index.php?action=delete_quiz&quiz_id=<?php echo $row['quiz_id']; ?>">Delete</a> | <a href = "index.php?action=quiz_actdeact&quiz_id=<?php echo $row['quiz_id']; ?>&status=<?php echo $row['status']? '0' : '1'; ?>"><?php echo $row['status'] ? 'Deactivate' : 'Activate'; ?></a></td> -->
+												<td><!-- <a href = "index.php?action=delete_receipt&rec_id=<?php echo $row['id']; ?>">Delete</a> |  -->	<a target = "_blank" href = "index.php?action=preview_receipt&receipt_id=<?php echo $row['id']; ?>">Preview Receipt</a>
+												</td>
+											</tr>
+										<?php } mysql_free_result ($result); ?>
+									</tbody>
+								</table>
+							</div>
+						</div>
                 </div>
                 <!-- /.row -->
 

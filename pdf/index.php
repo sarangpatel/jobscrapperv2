@@ -37,7 +37,7 @@ if($_REQUEST['action'] == 'add_receipt'){
 	if(empty($_SESSION['is_login_user'])){
 		require_once($dir.'html/login.php');
 	}else{
-		//$result = $model->listQuiz();
+		$result = $model->listReceipt();
 		require_once($dir.'html/home.php');
 	}
 }
