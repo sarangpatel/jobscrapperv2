@@ -59,7 +59,7 @@
 												<td><?php echo $row['full_name']; ?></td>
 												<td><?php echo $row['added_on'];?></td>
 												<!-- <td><a href = "index.php?action=manage_questions&quiz_id=<?php echo $row['quiz_id']; ?>">Manage Questions</a> | <a href = "index.php?action=delete_quiz&quiz_id=<?php echo $row['quiz_id']; ?>">Delete</a> | <a href = "index.php?action=quiz_actdeact&quiz_id=<?php echo $row['quiz_id']; ?>&status=<?php echo $row['status']? '0' : '1'; ?>"><?php echo $row['status'] ? 'Deactivate' : 'Activate'; ?></a></td> -->
-												<td><!-- <a href = "index.php?action=delete_receipt&rec_id=<?php echo $row['id']; ?>">Delete</a> |  -->	<a target = "_blank" href = "index.php?action=preview_receipt&receipt_id=<?php echo $row['id']; ?>">Preview Receipt</a>
+												<td><!-- <a href = "index.php?action=delete_receipt&rec_id=<?php echo $row['id']; ?>">Delete</a> |  -->	<a target = "_blank" href = "index.php?action=preview_receipt&receipt_id=<?php echo $row['id']; ?>">Preview Receipt</a> | <a  href = "index.php?action=send_receipt&receipt_id=<?php echo $row['id']; ?>">Mail Receipt</a> 
 												</td>
 											</tr>
 										<?php } mysql_free_result ($result); ?>
