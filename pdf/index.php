@@ -4,7 +4,9 @@ error_reporting(0);
 ini_set('max_execution_time', 0);
 
 //echo __FILE__;
-$site_url = 'http://'.$_SERVER['HTTP_HOST'].'/jobscraperv2/pdf/';
+//$site_url = 'http://'.$_SERVER['HTTP_HOST'].'/jobscraperv2/pdf/';
+$site_url = 'http://'.$_SERVER['HTTP_HOST'].'/jobscrapperv2/jobscrapperv2/pdf/';
+
 $dir = dirname(__FILE__).'/';
 
 require_once($dir.'db.php');
@@ -28,10 +30,21 @@ if($_REQUEST['action'] == 'add_receipt'){
 	require_once($dir.'html/send_receipt.php');
 }else if($_REQUEST['action'] == 'mail_receipt'){
 	$receipt_id = $_POST['receipt_id'];
+	$mail_to = $_POST['email'];
+	$mail_subject = $_POST['subject'];
+	$mail_content = nl2br($_POST['description']);
 	$action_type = "mail";
 	$data = $model->previewReceipt($receipt_id);
 	require_once($dir . 'mpdf/mpdf.php');
 	$_SESSION['msg'] = 'Mail Sent.';
+	require_once($dir.'html/preview_receipt.php');
+}else if($_REQUEST['action'] == 'view_pdf'){
+	$receipt_id = $_GET['receipt_id'];
+	$action_type = "mail";
+	$view_browser = "view_browser";
+	$data = $model->previewReceipt($receipt_id);
+	require_once($dir . 'mpdf/mpdf.php');
+	//$_SESSION['msg'] = 'Mail Sent.';
 	require_once($dir.'html/preview_receipt.php');
 }else if($_REQUEST['action'] == 'set_login'){
 	$username = $_POST['username'];

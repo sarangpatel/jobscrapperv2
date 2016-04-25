@@ -150,38 +150,44 @@ font-weight:bold;
 	ob_end_clean();
 	if($action_type == 'mail'){
 		$mpdf=new mPDF();
-		$mpdf->WriteHTML(utf8_encode($html));
-		//$mpdf->Output($dir.time().'.pdf','F');exit;
-		//$mpdf->Output();
-		$content = $mpdf->Output('', 'S');
-		$content = chunk_split(base64_encode($content));
-		$mailto = 'responsemee@gmail.com'; //Mailto here
-		$from_name = 'Sarang'; //Name of sender mail
-		$from_mail = 'admin@admin.com'; //Mailfrom here
-		$subject = 'subjecthere'; 
-		$message = 'mailmessage';
-		$filename = "Receipt-".date("d-m-Y_H-i",time()); //Your Filename with local date and time
-		//Headers of PDF and e-mail
-		$boundary = "XYZ-" . date("dmYis") . "-ZYX"; 
-		$header = "--$boundary\r\n"; 
-		$header .= "Content-Transfer-Encoding: 8bits\r\n"; 
-		$header .= "Content-Type: text/html; charset=ISO-8859-1\r\n\r\n"; // or utf-8
-		$header .= "$message\r\n";
-		$header .= "--$boundary\r\n";
-		$header .= "Content-Type: application/pdf; name=\"".$filename."\"\r\n";
-		$header .= "Content-Disposition: attachment; filename=\"".$filename."\"\r\n";
-		$header .= "Content-Transfer-Encoding: base64\r\n\r\n";
-		$header .= "$content\r\n"; 
-		$header .= "--$boundary--\r\n";
-		$header2 = "MIME-Version: 1.0\r\n";
-		$header2 .= "From: ".$from_name." \r\n"; 
-		$header2 .= "Return-Path: $from_mail\r\n";
-		$header2 .= "Content-type: multipart/mixed; boundary=\"$boundary\"\r\n";
-		$header2 .= "$boundary\r\n";
-		mail($mailto,$subject,$header,$header2, "-r".$from_mail);
-		$_SESSION['msg'] = 'Mail Sent.';
-		header('location: index.php?action=list_receipt');
-		exit;
+		if($view_browser == 'view_browser'){
+			$mpdf->WriteHTML($html);
+			$mpdf->Output();
+			exit;
+		}else{
+			$mpdf->WriteHTML(utf8_encode($html));
+			//$mpdf->Output($dir.time().'.pdf','F');exit;
+			//$mpdf->Output();
+			$content = $mpdf->Output('', 'S');
+			$content = chunk_split(base64_encode($content));
+			$mailto = $mail_to; //Mailto here
+			$from_name = 'admin'; //Name of sender mail
+			$from_mail = 'admin@admin.com'; //Mailfrom here
+			$subject = $mail_subject; 
+			$message = $mail_content;
+			$filename = "Receipt-".date("d-m-Y_H-i",time()).'.pdf'; //Your Filename with local date and time
+			//Headers of PDF and e-mail
+			$boundary = "XYZ-" . date("dmYis") . "-ZYX"; 
+			$header = "--$boundary\r\n"; 
+			$header .= "Content-Transfer-Encoding: 8bits\r\n"; 
+			$header .= "Content-Type: text/html; charset=ISO-8859-1\r\n\r\n"; // or utf-8
+			$header .= "$message\r\n";
+			$header .= "--$boundary\r\n";
+			$header .= "Content-Type: application/pdf; name=\"".$filename."\"\r\n";
+			$header .= "Content-Disposition: attachment; filename=\"".$filename."\"\r\n";
+			$header .= "Content-Transfer-Encoding: base64\r\n\r\n";
+			$header .= "$content\r\n"; 
+			$header .= "--$boundary--\r\n";
+			$header2 = "MIME-Version: 1.0\r\n";
+			$header2 .= "From: ".$from_name." \r\n"; 
+			$header2 .= "Return-Path: $from_mail\r\n";
+			$header2 .= "Content-type: multipart/mixed; boundary=\"$boundary\"\r\n";
+			$header2 .= "$boundary\r\n";
+			mail($mailto,$subject,$header,$header2, "-r".$from_mail);
+			$_SESSION['msg'] = 'Mail successfully sent.';
+			header('location: index.php?action=list_receipt');
+			exit;
+		}
 	}else{
 		echo $html;
 	}
