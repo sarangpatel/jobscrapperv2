@@ -54,7 +54,11 @@
 									<input name = "ref_date"  id= "ref_date" class="form-control date-picker">
 									<p class="help-block">Ex : 2016-02-12 ( YYYY-MM-DD )</p>
 								</div>
-
+								<div class="form-group">
+									<label>Bottom Text</label>
+									<input name = "bottom_text"  id= "bottom_text" class="form-control date-picker">
+									<p class="help-block"></p>
+								</div>
 								<input type="hidden" name="action" value="save_receipt" />
 								<div class="form-group">
 									<label style = "font-size:20px;">Particulars | <a href="#" id="addScnt" >Add more</a></label>

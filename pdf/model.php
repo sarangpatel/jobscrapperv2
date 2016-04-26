@@ -12,8 +12,10 @@ class Model{
 		$full_name = addslashes($_POST['full_name']);
 		$ref_no = addslashes($_POST['ref_no']);
 		$ref_date = addslashes($_POST['ref_date']);
+		$bottom_text = addslashes($_POST['bottom_text']);
+
 		$added_on = date('Y-m-d H:i:s');
-		$sql = "INSERT INTO receipts(full_name,ref_no,ref_date,added_on)  VALUES('$full_name','$ref_no','$ref_date','$added_on');";
+		$sql = "INSERT INTO receipts(full_name,ref_no,ref_date,bottom_text,added_on)  VALUES('$full_name','$ref_no','$ref_date','$bottom_text','$added_on');";
 		mysql_query($sql,$link);
 		$last_id = mysql_insert_id();
 		foreach($_POST['item_name'] as $ky => $i_v){
@@ -41,7 +43,7 @@ class Model{
 
 	function previewReceipt($receipt_id){
 		global $link;
-		$sql = "SELECT r.id,r.full_name,r.ref_no,r.ref_date,rp.item_name,rp.item_qty,rp.item_price,r.added_on from receipts r INNER JOIN receipt_particulars	rp on r.id = rp.receipt_id WHERE r.id = $receipt_id order by r.id desc limit 100;";
+		$sql = "SELECT r.id,r.bottom_text,r.full_name,r.ref_no,r.ref_date,rp.item_name,rp.item_qty,rp.item_price,r.added_on from receipts r INNER JOIN receipt_particulars	rp on r.id = rp.receipt_id WHERE r.id = $receipt_id order by r.id desc limit 100;";
 		$result = mysql_query($sql,$link);
 		$data = array();
 		while ($row = mysql_fetch_assoc($result)) {
