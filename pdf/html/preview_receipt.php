@@ -119,7 +119,7 @@ font-weight:bold;
 
 					<tr>
 						<td width = "5%"></td>
-						<td width = "55%" align = "left"  style = "padding:200px 0px 20px 13px" >
+						<td width = "55%" align = "left"  style = "padding:210px 0px 20px 13px" >
 							<span class = "bank-details" style = "font-size : 13px;font-weight:bold;">
 								<span style = "text-decoration:underline;">Bank details: </span><br />
 								Account Name : Les Clefs d' Or India <br />
@@ -137,7 +137,10 @@ font-weight:bold;
 					</tr>
 					<tr >
 						<td colspan = "3" ><div class = "row-underline bold" style = "letter-spacing:1px;"><?php echo ucwords(convert_number_to_words($sum)); ?>&nbsp;Rupees Only </div><br /><div style = "font-size:15px;"><?php echo $data[0]['bottom_text']; ?></div></td>
-						<td colspan = "2"><br /><br /><hr /><div ><img width = "70" height= "70" border = "0"  src = "<?php echo $site_url.'uploads/keys.png'; ?>" style = "text-align:center;margin-left:55px;" /></div></td>
+						<td colspan = "2"><br /><br /><hr />
+						<img width = "100" height= "100" border = "0"  src = "<?php echo $site_url.'uploads/left-img.png'; ?>" >
+						<div><img width = "70" height= "70" border = "0"  src = "<?php echo $site_url.'uploads/keys.png'; ?>" style = "text-align:center;margin-left:55px;" ></div>
+						</td>
 					</tr>
 				</table>
 			</div>
