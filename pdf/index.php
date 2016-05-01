@@ -15,12 +15,14 @@ $model= new Model();
 
 if($_REQUEST['action'] == 'download_excel'){
 	$data = $model->getData();
-	header('Content-Type: application/csv');
+
+	header('Content-Description: File Transfer');
+	header('Content-Type: application/force-download');
 	header('Content-Disposition: attachment; filename=receipts.csv');
 	header('Pragma: no-cache');
 	$csv = "Ref ID,Name,Ref Data, Total \n";
 	foreach($data as $d){
-		$csv .= (50000 + $d['id']). ',' . $d['full_name'].','.$d['ref_date'].',' . $d['total']. "\n";
+		$csv .= (50000 + $d['id']). ',"' . $d['full_name'].'",'.$d['ref_date'].',' . $d['total']. "\n";
 	}
 	echo $csv;
 	exit;
