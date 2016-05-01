@@ -41,6 +41,11 @@
 						<div class="col-lg-6">
 							<form role="form" id = "quizForm" method = "POST">
 								<div class="form-group">
+									<label>Send receipt From</label>
+									<input name = "from"  id= "from" class="form-control">
+									<p class="help-block">abc@xyz.com</p>
+								</div>
+								<div class="form-group">
 									<label>Send receipt To</label>
 									<input name = "email"  id= "email" class="form-control">
 									<p class="help-block">abc@xyz.com</p>
@@ -92,6 +97,9 @@ $().ready(function() {
 		// validate the comment form when it is submitted
 	$( "#quizForm" ).validate({
 		rules: {
+			from:{
+			  required: true
+			},
 			email: {
 			  required: true
 			},
@@ -103,7 +111,8 @@ $().ready(function() {
 			}
 		},
 		messages: {
-			email:  "Please enter email",
+			from:  "Please enter from.",
+			email:  "Please enter email.",
 			subject:  "Please enter subject.",
 			description:  "Please enter mail content",
 		},

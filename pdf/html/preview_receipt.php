@@ -69,7 +69,7 @@ font-weight:bold;
 	<body>
 				<table width = "<?php echo ($action_type == 'mail') ? '100%' : '50%'; ?>" border = "0" align = "center" cellspacing = "0" cellpadding = "0">
 					<tr>
-						<td width = "20%"><img width = "100" height= "100" border = "0"  src = "<?php echo $site_url.'uploads/left-img.png'; ?>" ></td>
+						<td width = "20%" style  = "text-align:center;"><img width = "70" height= "70" border = "0"  src = "<?php echo $site_url.'uploads/left-keys.png'; ?>" ></td>
 						<td width = "60%" align = "center">
 							<span class = "htitle">LES CLEFS D' OR INDIA</span>
 							<div>&nbsp;</div>
@@ -93,7 +93,7 @@ font-weight:bold;
 					<div class = "row-underline"></div>
 				</div>
 				<div class = "r-inv-header">
-					<div class = "row-underline"><span class = "bold">REF No.  </span>&nbsp;<?php echo $data[0]['ref_no']; ?></div>
+					<div class = "row-underline"><span class = "bold">REF No.  </span>&nbsp;<?php echo (50000 + $data[0]['id']); ?></div>
 					<div class = "row-underline"><span class = "bold">REF Date. </span>&nbsp; <?php echo $data[0]['ref_date']; ?></div>
 				</div>
 				<div class = "clear"></div>
@@ -126,19 +126,22 @@ font-weight:bold;
 								Bank Name : State Bank of India <br />
 								A/C	No. : 00032674066401 <br />
 								CIF No. : 86524514332 / Swift Code : SBININBB364 <br />
-								IFS Code : SBIN0006945 / MICR Code : 400002062 <br />
+								IFS Code : SBIN0006945 / MICR Code : 400002062
 							</span>
 							<div style = "font-size: 10px;color:blue;">Note:Cheque / Draft / Pay Order  to be drawn in favor of  "Les Clefs d' or India" </div>
 							<div style = "font-size: 13px;font-weight:bold">Pan No. AAAAL6492N </div>
+							<div style = "font-size: 12px;">Payment to be made within one month from the date of issue.</div>
 						</td>
 						<td width = "10%"></td>
 						<td width = "15%" align = "right" valign = "bottom"   ><div style = "font-size: 20px;font-weight:bold">TOTAL&nbsp;&nbsp;</div></td>
 						<td width = "15%" align = "left" valign = "bottom"><div style = "font-size: 20px;font-weight:bold;border-top:1px solid black;">&nbsp;&nbsp;<?php echo $sum; ?>&nbsp;/-</div></td>
 					</tr>
 					<tr >
-						<td colspan = "3" ><div class = "row-underline bold" style = "letter-spacing:1px;"><?php echo ucwords(convert_number_to_words($sum)); ?>&nbsp;Rupees Only </div><br /><div style = "font-size:15px;"><?php echo $data[0]['bottom_text']; ?></div></td>
-						<td colspan = "2"><br /><br /><hr /><div><img width = "70" height= "70" border = "0"  src = "<?php echo $site_url.'uploads/left-img.png'; ?>"  style = "text-align:center;margin-left:55px;" ></div>
+						<td colspan = "3" style = "vertical-align:middle;" ><div class = "row-underline bold" style = "letter-spacing:1px;"><?php echo ucwords(convert_number_to_words($sum)); ?>&nbsp;Rupees Only </div>
+						<div style = "font-size:15px;"><?php echo $data[0]['bottom_text']; ?></div>
 						</td>
+						<td colspan = "2" ><hr style = "margin:10px 0px 0px 0px;" />
+						<img width = "45" height= "45" border = "0"  src = "<?php echo $site_url.'uploads/blue-logo.gif'; ?>"  style = "text-align:center;padding:0px;margin:0px 0px 0px 65px;" ></td>
 					</tr>
 				</table>
 			</div>
@@ -163,9 +166,10 @@ font-weight:bold;
 			//$mpdf->Output();
 			$content = $mpdf->Output('', 'S');
 			$content = chunk_split(base64_encode($content));
+			$mailfrom = $mail_from;
 			$mailto = $mail_to; //Mailto here
 			$from_name = 'admin'; //Name of sender mail
-			$from_mail = 'admin@admin.com'; //Mailfrom here
+			$from_mail = $mailfrom; //Mailfrom here
 			$subject = $mail_subject; 
 			$message = $mail_content;
 			$filename = "Receipt-".date("d-m-Y_H-i",time()).'.pdf'; //Your Filename with local date and time

@@ -57,7 +57,7 @@
 										while ($row = mysql_fetch_assoc($result)) { ?>
 											<tr>
 												<td><?php echo $row['id'];?></td>
-												<td><?php echo $row['ref_no'];?></td>
+												<td><?php echo (50000 +	 $row['id']); ?></td>
 												<td><?php echo $row['full_name']; ?></td>
 												<td><?php echo $row['added_on'];?></td>
 												<!-- <td><a href = "index.php?action=manage_questions&quiz_id=<?php echo $row['quiz_id']; ?>">Manage Questions</a> | <a href = "index.php?action=delete_quiz&quiz_id=<?php echo $row['quiz_id']; ?>">Delete</a> | <a href = "index.php?action=quiz_actdeact&quiz_id=<?php echo $row['quiz_id']; ?>&status=<?php echo $row['status']? '0' : '1'; ?>"><?php echo $row['status'] ? 'Deactivate' : 'Activate'; ?></a></td> -->

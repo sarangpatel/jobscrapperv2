@@ -45,10 +45,10 @@
 									<input name = "full_name"  id= "full_name" class="form-control">
 									<p class="help-block">Enter full name and address( Mr. Sarang Patel and address)</p>
 								</div>
-								<div class="form-group">
+								<!-- <div class="form-group">
 									<label>Ref No.</label>
 									<input name = "ref_no"  id= "ref_no" class="form-control">
-								</div>
+								</div> -->
 								<div class="form-group">
 									<label>Ref Date.</label>
 									<input name = "ref_date"  id= "ref_date" class="form-control date-picker">
@@ -119,9 +119,9 @@ $().ready(function() {
 			full_name: {
 			  required: true
 			},
-			ref_no: {
+			/*ref_no: {
 			  required: true
-			},
+			},*/
 			ref_date: {
 			  required: true
 			}

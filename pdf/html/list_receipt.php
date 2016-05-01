@@ -29,7 +29,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            List Receipts
+                            List Receipts | <a  target = "_blank" href = "index.php?action=download_excel">Download</a>
                         </h1>
 					
 					<div class="row">
@@ -55,11 +55,11 @@
 										while ($row = mysql_fetch_assoc($result)) { ?>
 											<tr>
 												<td><?php echo $row['id'];?></td>
-												<td><?php echo $row['ref_no'];?></td>
+												<td><?php echo (50000 +	 $row['id']); ?></td>
 												<td><?php echo $row['full_name']; ?></td>
 												<td><?php echo $row['added_on'];?></td>
 												<!-- <td><a href = "index.php?action=manage_questions&quiz_id=<?php echo $row['quiz_id']; ?>">Manage Questions</a> | <a href = "index.php?action=delete_quiz&quiz_id=<?php echo $row['quiz_id']; ?>">Delete</a> | <a href = "index.php?action=quiz_actdeact&quiz_id=<?php echo $row['quiz_id']; ?>&status=<?php echo $row['status']? '0' : '1'; ?>"><?php echo $row['status'] ? 'Deactivate' : 'Activate'; ?></a></td> -->
-												<td><!-- <a href = "index.php?action=delete_receipt&rec_id=<?php echo $row['id']; ?>">Delete</a> |  -->	<a target = "_blank" href = "index.php?action=preview_receipt&receipt_id=<?php echo $row['id']; ?>">Preview Receipt</a> | <a  href = "index.php?action=send_receipt&receipt_id=<?php echo $row['id']; ?>">Mail Receipt</a> | <a  target = "_blank" href = "index.php?action=view_pdf&receipt_id=<?php echo $row['id']; ?>">Preview in PDF</a> 
+												<td><!-- <a href = "index.php?action=delete_receipt&rec_id=<?php echo $row['id']; ?>">Delete</a> |  -->	<a target = "_blank" href = "index.php?action=preview_receipt&receipt_id=<?php echo $row['id']; ?>">Preview Receipt</a> | <a  href = "index.php?action=send_receipt&receipt_id=<?php echo $row['id']; ?>">Mail Receipt</a> | <a  target = "_blank" href = "index.php?action=view_pdf&receipt_id=<?php echo $row['id']; ?>">Preview in PDF 
 												</td>
 											</tr>
 										<?php } mysql_free_result ($result); ?>

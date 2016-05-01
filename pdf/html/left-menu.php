@@ -14,7 +14,11 @@
 	 <li class="<?php echo $_REQUEST['action'] == 'add_receipt' ? 'active' : ''; ?>">
 		<a href="index.php?action=add_receipt"><i class="fa fa-fw "></i>Add Receipt</a>
 	</li>
-	 <li class="<?php echo ($_REQUEST['action'] == 'list_receipt' || $_REQUEST['action'] == '')  ? 'active' : ''; ?>">
+	 <li class="<?php echo ($_REQUEST['action'] == 'list_receipt' || $_REQUEST['action'] == '' || $_REQUEST['set_login'] == '' )  ? 'active' : ''; ?>">
 		<a href="index.php?action=list_receipt"><i class="fa fa-fw "></i>List Receipt</a>
 	</li>
+	 <li>
+		<a href="index.php?action=logout"><i class="fa fa-fw "></i>Logout</a>
+	</li>
+
 </ul>

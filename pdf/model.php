@@ -54,6 +54,17 @@ class Model{
 	}
 
 
+	function getData(){
+		global $link;
+
+		$sql = "SELECT r.id,r.full_name,r.ref_date,sum((rp.item_qty* rp.item_price)) as total FROM `receipts` r inner join receipt_particulars rp on r.id = rp.receipt_id group by r.id order by r.id desc limit 300";
+		$result = mysql_query($sql,$link);
+		$data = array();
+		while ($row = mysql_fetch_assoc($result)) {
+			$data[] = $row;
+		}
+		return $data;
+	}
 
 	
 	function activeDeactivateQuiz($data){
