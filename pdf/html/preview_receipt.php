@@ -69,7 +69,7 @@ font-weight:bold;
 	<body>
 				<table width = "<?php echo ($action_type == 'mail') ? '100%' : '50%'; ?>" border = "0" align = "center" cellspacing = "0" cellpadding = "0">
 					<tr>
-						<td width = "20%" style  = "text-align:center;"><img width = "70" height= "70" border = "0"  src = "<?php echo $site_url.'uploads/left-keys.png'; ?>" ></td>
+						<td width = "20%" style  = "text-align:center;"><img width = "70" height= "70" border = "0"  src = "<?php echo $site_url.'uploads/left-keys1.png'; ?>" ></td>
 						<td width = "60%" align = "center">
 							<span class = "htitle">LES CLEFS D' OR INDIA</span>
 							<div>&nbsp;</div>
