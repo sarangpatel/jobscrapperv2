@@ -18,9 +18,9 @@ if($_REQUEST['action'] == 'download_excel'){
 
 	header('Content-Description: File Transfer');
 	header('Content-Type: application/force-download');
-	header('Content-Disposition: attachment; filename=receipts.csv');
+	header('Content-Disposition: attachment; filename=receipts.xlsx');
 	header('Pragma: no-cache');
-	$csv = "Ref ID,Name,Ref Data, Total \n";
+	$csv = "Ref ID,Name,Ref Date, Total \n";
 	foreach($data as $d){
 		$csv .= (50000 + $d['id']). ',"' . $d['full_name'].'",'.$d['ref_date'].',' . $d['total']. "\n";
 	}
