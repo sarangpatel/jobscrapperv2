@@ -16,9 +16,10 @@ $model= new Model();
 if($_REQUEST['action'] == 'download_excel'){
 	$data = $model->getData();
 
+
 	header('Content-Description: File Transfer');
-	header('Content-Type: application/force-download');
-	header('Content-Disposition: attachment; filename=receipts.xlsx');
+	header('Content-Type: application/octet-stream');
+	header('Content-Disposition: attachment; filename=receipts.csv');
 	header('Pragma: no-cache');
 	$csv = "Ref ID,Name,Ref Date, Total \n";
 	foreach($data as $d){
