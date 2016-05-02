@@ -140,8 +140,8 @@ font-weight:bold;
 						<td colspan = "3" style = "vertical-align:middle;" ><div class = "row-underline bold" style = "letter-spacing:1px;"><?php echo ucwords(convert_number_to_words($sum)); ?>&nbsp;Rupees Only </div>
 						<div style = "font-size:15px;"><?php echo $data[0]['bottom_text']; ?></div>
 						</td>
-						<td colspan = "2" ><hr style = "margin:10px 0px 0px 0px;" />
-						<img width = "45" height= "45" border = "0"  src = "<?php echo $site_url.'uploads/blue-logo.gif'; ?>"  style = "text-align:center;padding:0px;margin:0px 0px 0px 65px;" ></td>
+						<td colspan = "2" >
+						<img width = "60" height= "60" border = "0"  src = "<?php echo $site_url.'uploads/blue-logo.gif'; ?>"  style = "text-align:center;padding:0px;margin:0px 0px 0px 65px;" ></td>
 					</tr>
 				</table>
 			</div>
