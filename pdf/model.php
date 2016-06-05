@@ -27,6 +27,69 @@ class Model{
 		}
 	}
 
+	function updateReceipt($invoice_id){
+		global $link;
+		$full_name = addslashes($_POST['full_name']);
+		$ref_no = addslashes($_POST['ref_no']);
+		$ref_date = addslashes($_POST['ref_date']);
+		$bottom_text = addslashes($_POST['bottom_text']);
+		$added_on = date('Y-m-d H:i:s');
+		$sql = "UPDATE receipts SET full_name = '$full_name',ref_date = '$ref_date',bottom_text = '$bottom_text', added_on = '$added_on' where id = $invoice_id;";
+		mysql_query($sql,$link);
+		$last_id = mysql_insert_id();
+		foreach($_POST['item_name'] as $ky => $i_v){
+			$i_name = addslashes($_POST['item_name'][$ky]);
+			$i_q = addslashes($_POST['item_qty'][$ky]);
+			$i_p = addslashes($_POST['item_price'][$ky]);
+			$sql = "UPDATE receipt_particulars SET item_name = '$i_name', item_qty = '$i_q',item_price = '$i_p' WHERE receipt_id = $invoice_id ;";  
+			mysql_query($sql,$link);
+		}
+	}
+
+
+
+	function generateReceipt($invoice_id){
+		global $link;
+		$full_name = addslashes($_POST['full_name']);
+		$amount = addslashes($_POST['amount']);
+		$payment_mode_no = addslashes($_POST['payment_mode_no']);
+		$invoice_id = addslashes($invoice_id);
+		$added_on = date('Y-m-d H:i:s');
+		$sql = "INSERT INTO receipt_generated(invoice_id,full_name,amount,payment_mode_no,added_on)  VALUES($invoice_id,'$full_name','$amount','$payment_mode_no','$added_on');";
+		mysql_query($sql,$link);
+		$last_id = mysql_insert_id();
+		return $last_id;
+	}
+
+
+	function listRecp($invoice_id,$id = ''){
+		if($id != ''){
+			$param .= " and id = $id ";
+		}
+		global $link;
+		$sql = "SELECT * from receipt_generated where invoice_id = $invoice_id $param order by id desc limit 500;";
+		$result = mysql_query($sql,$link);
+		return $result;
+	}
+
+
+	function listRecpData($invoice_id,$id = ''){
+		if($id != ''){
+			$param .= " and id = $id ";
+		}
+		global $link;
+		$sql = "SELECT * from receipt_generated where invoice_id = $invoice_id $param order by id desc limit 1;";
+		$result = mysql_query($sql,$link);
+		$data = array();
+		$row = mysql_fetch_assoc($result);
+		$data= $row;
+		return $data;
+	}
+
+
+
+
+	
 	/*function listReceipt(){
 		global $link;
 		$sql = "SELECT r.id,r.full_name,r.ref_no,r.ref_date,rp.item_name,rp.item_qty,rp.item_price,r.added_on from receipts r INNER JOIN receipt_particulars	rp on r.id = rp.receipt_id order by r.id desc limit 400;";
