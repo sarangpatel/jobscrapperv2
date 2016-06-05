@@ -1,7 +1,6 @@
 <?php require_once($dir.'html/header.php'); ?>
 <body>
     <div id="wrapper">
-
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -12,7 +11,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Receipt Manager</a>
+                <a class="navbar-brand" href="#">Invoice Manager</a>
             </div>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -29,7 +28,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Add Invoice
+                            Edit Invoice
                             <!-- <small>Subheading</small>
  -->                       </h1>
 					<div class="row">
@@ -39,11 +38,12 @@
 				        </div>
 						<?php } unset($_SESSION['msg']); ?>
 						<div class="col-lg-6">
+							<?php //echo '<PRE>';print_r($data); ?>
 							<form role="form" id = "quizForm" method = "POST">
 								<div class="form-group">
 									<label>Full Name</label>
-									<input name = "full_name"  id= "full_name" class="form-control">
-									<p class="help-block">Enter full name and address( Mr. Sarang Patel and address)</p>
+									<input name = "full_name"  id= "full_name" class="form-control " value = "<?php echo $data[0]['full_name']; ?>" >
+									<p class="help-block">Enter full name and address( Mr. XXX XXXXX and address)</p>
 								</div>
 								<!-- <div class="form-group">
 									<label>Ref No.</label>
@@ -51,33 +51,37 @@
 								</div> -->
 								<div class="form-group">
 									<label>Ref Date.</label>
-									<input name = "ref_date"  id= "ref_date" class="form-control date-picker">
+									<input name = "ref_date"  id= "ref_date" class="form-control date-picker" value = "<?php echo $data[0]['ref_date']; ?>">
 									<p class="help-block">Ex : 2016-02-12 ( YYYY-MM-DD )</p>
 								</div>
 								<div class="form-group">
 									<label>Bottom Text</label>
-									<input name = "bottom_text"  id= "bottom_text" class="form-control date-picker">
+									<input name = "bottom_text"  id= "bottom_text" class="form-control date-picker validate-field" value = "<?php echo $data[0]['bottom_text']; ?>" >
 									<p class="help-block"></p>
 								</div>
 								<input type="hidden" name="action" value="save_receipt" />
+								<input type="hidden" name="invoice_id" value="<?php echo $data[0]['id']; ?>" />
+
 								<div class="form-group">
-									<label style = "font-size:20px;">Particulars | <a href="#" id="addScnt" >Add more</a></label>
+									<label style = "font-size:20px;">Particulars <!-- | <a href="#" id="addScnt" >Add more</a> --></label>
 								</div>
 								<div  id = "p_scents">
-									<div class = "rw">
-										<div class="form-group">
-											<label>Item Name</label>
-											<input name = "item_name[]"  id= "item_name" class="form-control">
+									<?php foreach($data as $ky => $d){ ?>
+										<div class = "rw">
+											<div class="form-group">
+												<label>Item Name <?php echo $ky+ 1 ; ?></label>
+												<input name = "item_name[]"  id= "item_name" class="form-control" value = "<?php echo $d['item_name']; ?>" >
+											</div>
+											<div class="form-group">
+												<label>Item Quantity <?php echo $ky+ 1 ; ?></label>
+												<input name = "item_qty[]"  id= "item_qty" class="form-control num" value = "<?php echo $d['item_qty']; ?>" >
+											</div>
+											<div class="form-group">
+												<label>Item Price <?php echo $ky+ 1 ; ?></label>
+												<input name = "item_price[]"  id= "item_price" class="form-control num" value = "<?php echo $d['item_price']; ?>" >
+											</div>
 										</div>
-										<div class="form-group">
-											<label>Item Quantity</label>
-											<input name = "item_qty[]"  id= "item_qty" class="form-control num">
-										</div>
-										<div class="form-group">
-											<label>Item Price</label>
-											<input name = "item_price[]"  id= "item_price" class="form-control num">
-										</div>
-									</div>
+									<?php }  ?>
 								</div>
 								<button type="submit" class="btn btn-default">Submit Button</button>
 							</form>
@@ -139,8 +143,14 @@ $().ready(function() {
 				return false; // prevent normal form posting
 			}
 		}
-
 	});
+	$(".validate-field").rules("add",{
+		required:true,
+		messages: {
+			required: "Please enter text",
+		}
+	});
+
 
 });
 
@@ -151,7 +161,7 @@ $(function() {
 				evt.preventDefault();
 				var i = $('div.rw').length;
 				console.log(i);
-				$('<div class = "rw remove' + i  +  '"><div class="form-group"><label>Item Name | <a href="#" id="remScnt" class = "anc-' + i + '" >Remove</a></label><input name = "item_name[]"  id= "item_name" class="form-control"></div><div class="form-group"><label>Item Quantity</label><input name = "item_qty[]"  id= "item_qty" class="form-control"></div><div class="form-group"><label>Item Price</label><input name = "item_price[]"  id= "item_price" class="form-control"></div></div>').appendTo(scntDiv);
+				$('<div class = "rw remove' + i  +  '"><div class="form-group"><label>Item Name | <a href="#" id="remScnt" class = "anc-' + i + '" >Remove</a></label><input name = "item_name[]"  id= "item_name" class="form-control validate-field"></div><div class="form-group"><label>Item Quantity</label><input name = "item_qty[]"  id= "item_qty" class="form-control validate-field"></div><div class="form-group"><label>Item Price</label><input name = "item_price[]"  id= "item_price" class="form-control validate-field"></div></div>').appendTo(scntDiv);
 				return false;
 		});
 		

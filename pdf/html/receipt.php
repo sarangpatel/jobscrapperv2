@@ -28,10 +28,9 @@
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">
-                            List Invoices | <a  target = "_blank" href = "index.php?action=download_excel">Download</a>
-                        </h1>
-					
+					<h1 class="page-header">
+						Receipts | <a href = "index.php?action=create_receipt&invoice_id=<?php echo $invoice_id; ?>" >Generate receipt</a>
+					</h1>
 					<div class="row">
 						<?php if(!empty($_SESSION['msg'])) { ?>
 		                <div class="alert alert-success">
@@ -46,25 +45,28 @@
 											<th>ID</th>
 											<th>Invoice No.</th>
 											<th>Name</th>
+											<th>Amount</th>
 											<th>Added on</th>
 											<th>Action</th>
 										</tr>
 									</thead>
 									<tbody>
 										<?php
-										while ($row = mysql_fetch_assoc($result)) { ?>
+										$rw = 0;
+										while ($row = mysql_fetch_assoc($result)) { $rw += 1; ?>
 											<tr>
 												<td><?php echo $row['id'];?></td>
-												<td><?php echo (5000 +	 $row['id']); ?></td>
+												<td><?php echo (5000 +	 $row['invoice_id']); ?></td>
 												<td><?php echo $row['full_name']; ?></td>
+												<td><?php echo $row['amount']; ?></td>
 												<td><?php echo $row['added_on'];?></td>
-												<!-- <td><a href = "index.php?action=manage_questions&quiz_id=<?php echo $row['quiz_id']; ?>">Manage Questions</a> | <a href = "index.php?action=delete_quiz&quiz_id=<?php echo $row['quiz_id']; ?>">Delete</a> | <a href = "index.php?action=quiz_actdeact&quiz_id=<?php echo $row['quiz_id']; ?>&status=<?php echo $row['status']? '0' : '1'; ?>"><?php echo $row['status'] ? 'Deactivate' : 'Activate'; ?></a></td> -->
-												<td><!-- <a href = "index.php?action=delete_receipt&rec_id=<?php echo $row['id']; ?>">Delete</a> |  -->	<a target = "_blank" href = "index.php?action=preview_receipt&receipt_id=<?php echo $row['id']; ?>">Preview Invoice</a> | <a  href = "index.php?action=edit_receipt&invoice_id=<?php echo $row['id']; ?>">Edit Invoice</a>  | <a  href = "index.php?action=send_receipt&receipt_id=<?php echo $row['id']; ?>">Mail Invoice</a> | <a  target = "_blank" href = "index.php?action=view_pdf&receipt_id=<?php echo $row['id']; ?>">Preview in PDF | <a  href = "index.php?action=receipt&invoice_id=<?php echo $row['id']; ?>">Receipt</a> 
-												</td>
+												<td><a target = "_blank" href = "index.php?action=generate_pdf_receipt&invoice_id=<?php echo $row['invoice_id']; ?>&id=<?php echo $row['id']; ?>">Generate PDF</a> | <a  href = "index.php?action=mail_pdf_receipt&invoice_id=<?php echo $row['invoice_id']; ?>&id=<?php echo $row['id']; ?>">Mail PDF</a></td>
 											</tr>
 										<?php } mysql_free_result ($result); ?>
 									</tbody>
 								</table>
+								<?php if($rw < 1)echo 'No Records found.';   ?>
+
 							</div>
 						</div>
 					</div><!--- row -->

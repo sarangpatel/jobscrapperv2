@@ -12,7 +12,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Receipt Manager</a>
+                <a class="navbar-brand" href="#">Invoice Manager</a>
             </div>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -29,9 +29,9 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Add Invoice
+                            Send Receipt 
                             <!-- <small>Subheading</small>
- -->                       </h1>
+ -->                        </h1>
 					<div class="row">
 						<?php if(!empty($_SESSION['msg'])) { ?>
 		                <div class="alert alert-success">
@@ -41,45 +41,27 @@
 						<div class="col-lg-6">
 							<form role="form" id = "quizForm" method = "POST">
 								<div class="form-group">
-									<label>Full Name</label>
-									<input name = "full_name"  id= "full_name" class="form-control">
-									<p class="help-block">Enter full name and address( Mr. Sarang Patel and address)</p>
-								</div>
-								<!-- <div class="form-group">
-									<label>Ref No.</label>
-									<input name = "ref_no"  id= "ref_no" class="form-control">
-								</div> -->
-								<div class="form-group">
-									<label>Ref Date.</label>
-									<input name = "ref_date"  id= "ref_date" class="form-control date-picker">
-									<p class="help-block">Ex : 2016-02-12 ( YYYY-MM-DD )</p>
+									<label>Send receipt From</label>
+									<input name = "from"  id= "from" class="form-control">
+									<p class="help-block">abc@xyz.com</p>
 								</div>
 								<div class="form-group">
-									<label>Bottom Text</label>
-									<input name = "bottom_text"  id= "bottom_text" class="form-control date-picker">
-									<p class="help-block"></p>
+									<label>Send receipt To</label>
+									<input name = "email"  id= "email" class="form-control">
+									<p class="help-block">abc@xyz.com</p>
 								</div>
-								<input type="hidden" name="action" value="save_receipt" />
 								<div class="form-group">
-									<label style = "font-size:20px;">Particulars | <a href="#" id="addScnt" >Add more</a></label>
+									<label>Mail Subject</label>
+									<input name = "subject"  id= "subject" class="form-control">
 								</div>
-								<div  id = "p_scents">
-									<div class = "rw">
-										<div class="form-group">
-											<label>Item Name</label>
-											<input name = "item_name[]"  id= "item_name" class="form-control">
-										</div>
-										<div class="form-group">
-											<label>Item Quantity</label>
-											<input name = "item_qty[]"  id= "item_qty" class="form-control num">
-										</div>
-										<div class="form-group">
-											<label>Item Price</label>
-											<input name = "item_price[]"  id= "item_price" class="form-control num">
-										</div>
-									</div>
+								<div class="form-group">
+									<label>Mail Description</label>
+									<textarea name = "description"  id= "description" class="form-control"></textarea>
 								</div>
-								<button type="submit" class="btn btn-default">Submit Button</button>
+								<input type="hidden" name="invoice_id" value="<?php echo $invoice_id; ?>" />
+								<input type="hidden" name="id" value="<?php echo $id; ?>" />
+								<input type="hidden" name="action" value="send_mail_pdf_receipt" />
+								<button type="submit" class="btn btn-default">Send Mail</button>
 							</form>
 						</div>
 						</div>
@@ -116,20 +98,24 @@ $().ready(function() {
 		// validate the comment form when it is submitted
 	$( "#quizForm" ).validate({
 		rules: {
-			full_name: {
+			from:{
 			  required: true
 			},
-			/*ref_no: {
+			email: {
 			  required: true
-			},*/
-			ref_date: {
+			},
+			subject: {
+			  required: true
+			},
+			description: {
 			  required: true
 			}
 		},
 		messages: {
-			full_name:  "Please enter full name",
-			ref_no:  "Please enter ref no.",
-			ref_date:  "Please enter ref date",
+			from:  "Please enter from.",
+			email:  "Please enter email.",
+			subject:  "Please enter subject.",
+			description:  "Please enter mail content",
 		},
 		submitHandler: function(form){
 			if ($(form).valid()) {
@@ -144,25 +130,6 @@ $().ready(function() {
 
 });
 
-
-$(function() {
-		var scntDiv = $('#p_scents');
-		$('#addScnt').on('click', function(evt) {
-				evt.preventDefault();
-				var i = $('div.rw').length;
-				console.log(i);
-				$('<div class = "rw remove' + i  +  '"><div class="form-group"><label>Item Name | <a href="#" id="remScnt" class = "anc-' + i + '" >Remove</a></label><input name = "item_name[]"  id= "item_name" class="form-control"></div><div class="form-group"><label>Item Quantity</label><input name = "item_qty[]"  id= "item_qty" class="form-control"></div><div class="form-group"><label>Item Price</label><input name = "item_price[]"  id= "item_price" class="form-control"></div></div>').appendTo(scntDiv);
-				return false;
-		});
-		
-		$(document).on('click','#remScnt' , function(evt) {
-				evt.preventDefault();
-				console.log($(this).parent().parent().parent());
-				$(this).parent().parent().parent().remove();
-
-				return false;
-		});
-});
 
 
 </script>

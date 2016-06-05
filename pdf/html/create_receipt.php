@@ -12,7 +12,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Receipt Manager</a>
+                <a class="navbar-brand" href="#">Invoice Manager</a>
             </div>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -28,10 +28,9 @@
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">
-                            Add Invoice
-                            <!-- <small>Subheading</small>
- -->                       </h1>
+					<h1 class="page-header">
+						Generate Receipt
+					</h1>
 					<div class="row">
 						<?php if(!empty($_SESSION['msg'])) { ?>
 		                <div class="alert alert-success">
@@ -41,49 +40,26 @@
 						<div class="col-lg-6">
 							<form role="form" id = "quizForm" method = "POST">
 								<div class="form-group">
-									<label>Full Name</label>
+									<label>Name</label>
 									<input name = "full_name"  id= "full_name" class="form-control">
-									<p class="help-block">Enter full name and address( Mr. Sarang Patel and address)</p>
-								</div>
-								<!-- <div class="form-group">
-									<label>Ref No.</label>
-									<input name = "ref_no"  id= "ref_no" class="form-control">
-								</div> -->
-								<div class="form-group">
-									<label>Ref Date.</label>
-									<input name = "ref_date"  id= "ref_date" class="form-control date-picker">
-									<p class="help-block">Ex : 2016-02-12 ( YYYY-MM-DD )</p>
+									<input name = "invoice_id"   class="form-control" type = "hidden" value = "<?php echo $invoice_id; ?>" >
 								</div>
 								<div class="form-group">
-									<label>Bottom Text</label>
-									<input name = "bottom_text"  id= "bottom_text" class="form-control date-picker">
+									<label>Amount</label>
+									<input name = "amount"  id= "amount" class="form-control num">
 									<p class="help-block"></p>
 								</div>
-								<input type="hidden" name="action" value="save_receipt" />
 								<div class="form-group">
-									<label style = "font-size:20px;">Particulars | <a href="#" id="addScnt" >Add more</a></label>
+									<label>by Cash/Cheque/Draft No.</label>
+									<input name = "payment_mode_no"  id= "payment_mode_no" class="form-control">
+									<p class="help-block"></p>
 								</div>
-								<div  id = "p_scents">
-									<div class = "rw">
-										<div class="form-group">
-											<label>Item Name</label>
-											<input name = "item_name[]"  id= "item_name" class="form-control">
-										</div>
-										<div class="form-group">
-											<label>Item Quantity</label>
-											<input name = "item_qty[]"  id= "item_qty" class="form-control num">
-										</div>
-										<div class="form-group">
-											<label>Item Price</label>
-											<input name = "item_price[]"  id= "item_price" class="form-control num">
-										</div>
-									</div>
-								</div>
-								<button type="submit" class="btn btn-default">Submit Button</button>
+								<input type="hidden" name="action" value="generate_receipt" />
+								<button type="submit" class="btn btn-default">Submit</button>
 							</form>
 						</div>
-						</div>
-					</div>
+					</div><!--- row -->
+				</div>
                 <!-- /.row -->
 
             </div>
@@ -100,12 +76,10 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
 	<script type = "text/javascript" src = "js/jquery.validate.js"></script>
 <script>
 $().ready(function() {
-
-//$(".date-picker").datetimepicker();
-
 
  $('.num').keypress(function(event){
 	   if(event.which != 8 && isNaN(String.fromCharCode(event.which))){
@@ -119,17 +93,17 @@ $().ready(function() {
 			full_name: {
 			  required: true
 			},
-			/*ref_no: {
+			amount: {
 			  required: true
-			},*/
-			ref_date: {
+			},
+			payment_mode_no: {
 			  required: true
 			}
 		},
 		messages: {
 			full_name:  "Please enter full name",
-			ref_no:  "Please enter ref no.",
-			ref_date:  "Please enter ref date",
+			amount:  "Please enter amount",
+			payment_mode_no:  "Please enter payment mode",
 		},
 		submitHandler: function(form){
 			if ($(form).valid()) {
@@ -143,34 +117,13 @@ $().ready(function() {
 	});
 
 });
-
-
-$(function() {
-		var scntDiv = $('#p_scents');
-		$('#addScnt').on('click', function(evt) {
-				evt.preventDefault();
-				var i = $('div.rw').length;
-				console.log(i);
-				$('<div class = "rw remove' + i  +  '"><div class="form-group"><label>Item Name | <a href="#" id="remScnt" class = "anc-' + i + '" >Remove</a></label><input name = "item_name[]"  id= "item_name" class="form-control"></div><div class="form-group"><label>Item Quantity</label><input name = "item_qty[]"  id= "item_qty" class="form-control"></div><div class="form-group"><label>Item Price</label><input name = "item_price[]"  id= "item_price" class="form-control"></div></div>').appendTo(scntDiv);
-				return false;
-		});
-		
-		$(document).on('click','#remScnt' , function(evt) {
-				evt.preventDefault();
-				console.log($(this).parent().parent().parent());
-				$(this).parent().parent().parent().remove();
-
-				return false;
-		});
-});
-
-
 </script>
 <style>
 .error{
 	color:red;
 }
 </style>
+
 
 </body>
 </html>

@@ -12,7 +12,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Receipt Manager</a>
+                <a class="navbar-brand" href="#">Invoice Manager</a>
             </div>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -29,7 +29,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Send Receipt 
+                            Send Invoice
                             <!-- <small>Subheading</small>
  -->                        </h1>
 					<div class="row">
