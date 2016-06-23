@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Samples</title>
+<link rel="stylesheet" href="examples/css/sample.css" />
+<script src="js/jquery/jquery-1.9.0.min.js"></script>
+<!-- <msdropdown> -->
+<link rel="stylesheet" type="text/css" href="css/msdropdown/dd.css" />
+<script src="js/msdropdown/jquery.dd.js"></script>
+<!-- </msdropdown> -->
+
+<link rel="stylesheet" type="text/css" href="css/msdropdown/skin2.css" />
+<link rel="stylesheet" type="text/css" href="css/msdropdown/flags.css" />
+</head>
+<body>
+<table width="100%" border="0" cellspacing="1" cellpadding="5" class="topmenu">
+  <tr>
+    <td colspan="2" class="top"><h1>Javascript image dropdown <span id="ver"></span> <a title="Download" href="http://www.marghoobsuleman.com/jquery-image-dropdown" class="small">Download</a></h1></td>
+  </tr>
+  <tr>
+    <td width="25%"><select style="width:250px"  name="pages" id="pages">
+      <option value="" selected="selected">Choose a sample page</option>
+      <option value="examples/index.html">Normal</option>
+      <option value="examples/byjson.html">By Json Data</option>
+      <option value="examples/multiple-skin.html">Multiple Skin</option>
+      <option value="examples/css-sprite.html">CSS Sprite</option>
+      <option value="examples/object-oriented-approach.html">Object Oriented Approach</option>
+      <option value="examples/object-oriented-approach-more.html">Object Oriented Approach - More</option>
+      <option value="examples/use-checkbox.html">Use Checkbox</option>
+      <option value="examples/mouse-events.html">Mouse Events</option>
+      <option value="examples/help.html">Documentation</option>
+    </select></td>
+    <td align="left"><a href="help.html">Documentation</a></td>
+  </tr>
+</table>
+<form action="examples/submitdata.php" method="post" enctype="multipart/form-data" name="frmdata">
+<table width="100%" border="0" cellspacing="1" cellpadding="5" class="tblWhite">
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top"><h3>Created from HTML SELECT Element</h3></td>
+  </tr>
+  <tr>
+    <td valign="top">
+    <select id="payments" name="payments" style="width:250px;">
+        <option value="" data-description="Choos your payment gateway">Payment Gateway</option>
+        <option value="amex" data-image="images/msdropdown/icons/Amex-56.png" data-description="My life. My card...">Amex</option>
+        <option value="Discover" data-image="images/msdropdown/icons/Discover-56.png" data-description="It pays to Discover...">Discover</option>
+        <option value="Mastercard" data-image="images/msdropdown/icons/Mastercard-56.png" data-title="For everything else..." data-description="For everything else...">Mastercard</option>
+        <option value="cash" data-image="images/msdropdown/icons/Cash-56.png" data-description="Sorry not available..." disabled="true">Cash on devlivery</option>
+        <option value="Visa" data-image="images/msdropdown/icons/Visa-56.png" data-description="All you need...">Visa</option>
+        <option value="Paypal" data-image="images/msdropdown/icons/Paypal-56.png" data-description="Pay and get paid...">Paypal</option>
+    </select> &nbsp;
+    <select style="width:200px" class="tech" name="tech" id="tech" onchange="showValue(this)">
+      <option value="calendar" data-image="images/msdropdown/icons/icon_calendar.gif">Calendar</option>
+      <option value="shopping_cart" data-image="images/msdropdown/icons/icon_cart.gif">Shopping Cart</option>
+      <option value="cd" data-image="images/msdropdown/icons/icon_cd.gif" name="cd">CD</option>
+      <option value="email"  data-image="images/msdropdown/icons/icon_email.gif">Email</option>
+      <option value="faq" data-image="images/msdropdown/icons/icon_faq.gif">FAQ</option>
+      <option value="games" data-image="images/msdropdown/icons/icon_games.gif">Games</option>
+      <option value="music" data-image="images/msdropdown/icons/icon_music.gif">Music</option>
+      <option value="phone" data-image="images/msdropdown/icons/icon_phone.gif">Phone</option>
+      <option value="graph" data-image="images/msdropdown/icons/icon_sales.gif">Graph</option>
+      <option value="secured" data-image="images/msdropdown/icons/icon_secure.gif">Secured</option>
+      <option value="video" data-image="images/msdropdown/icons/icon_video.gif">Video</option>
+      <option value="cd" data-image="images/msdropdown/icons/icon_cd.gif" name="cd">CD</option>
+    </select>
+    
+    
+    </td>
+  </tr>
+  <tr>
+    <td valign="bottom">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top"><h3>CSS Sprite - Country dropdown with flags</h3></td>
+  </tr>
+  <tr>
+    <td valign="top">
+	<select name="countries" id="countries" style="width:300px;">
+	  <option value=''>Source language</option>
+      <option value='af' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag af" data-title="Afghanistan">Afghanistan</option>
+      <option value='af' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag za" data-title="Afrikaans">Afrikaans</option>
+      <option value='sq' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag al" data-title="Albanian">Albanian</option>
+      <option value='dz' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag dz" data-title="Algeria">Algeria</option>
+      <option value='am' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag et" data-title="Amharic">Amharic</option>
+      <option value='ad' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ad" data-title="Andorra">Andorra</option>
+      <option value='ar' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ar-lg" data-title="Arab League">Arab League</option>
+      <option value='hy' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag am" data-title="Armenian">Armenian</option>
+      <option value='ar' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ar" data-title="Argentina">Argentina</option>
+      <option value='au' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag au" data-title="Australia">Australia</option>
+      <option value='az' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag az" data-title="Azerbaijani">Azerbaijani</option>
+      <option value='eu' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag eusk" data-title="Basque (Euskadi)">Basque (Euskadi)</option>
+      <option value='be' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag by" data-title="Belarusian">Belarusian</option>
+      <option value='bn' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag bd" data-title="Bengali">Bengali</option>
+      <option value='bj' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag bj" data-title="Benin">Benin</option>
+      <option value='bs' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ba" data-title="Bosnian">Bosnian</option>
+      <option value='br' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag br" data-title="Brazil">Brazil</option>
+      <option value='bg' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag bg" data-title="Bulgarian">Bulgarian</option>
+      <option value='cm' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag cm" data-title="Cameroon">Cameroon</option>
+      <option value='en' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ca" data-title="Canada">Canada</option>
+      <option value='ca' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag cat" data-title="Catalan">Catalan</option>
+      <option value='ceb' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ph" data-title="Cebuano">Cebuano</option>
+      <option value='cn' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag cn" data-title="Chinese">Chinese (Simplified)</option>
+      <option value='zh-tw' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag tw" data-title="Taiwan">Chinese (Traditional)</option>
+      <option value='co' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag co" data-title="Colombia">Colombia</option>
+      <option value='km' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag km" data-title="Comoros">Comoros</option>    
+      <option value='cd' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag cd" data-title="Congo, Democratic Republic of">Congo, Democratic Republic of</option>
+      <option value='co' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag it" data-title="Corsican">Corsican</option>
+      <option value='hr' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag hr" data-title="Croatia (Hrvatska)">Croatia (Hrvatska)</option>
+      <option value='cs' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag cz" data-title="Czech">Czech</option>
+      <option value='da' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag dk" data-title="Danish">Danish</option>
+      <option value='nl' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag nl" data-title="Dutch">Dutch</option>
+      <option value='et' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ee" data-title="Estonian">Estonian</option>
+      <option value='eg' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag eg" data-title="Egypt">Egypt</option>
+      <option value='fa' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ir" data-title="Farsi">Farsi</option>
+      <option value='fi' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag fi" data-title="Finnish">Finnish</option>
+      <option value='fr' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag fr" data-title="French">French</option>
+      <option value='gal' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag gl" data-title="Galician">Galician</option>
+      <option value='gb' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag gb" data-title="Great Britain (UK)">Great Britain (UK)</option>
+      <option value='ka' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ge" data-title="Georgian">Georgian</option>
+      <option value='de' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag de" data-title="German">German</option>
+      <option value='gh' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag gh" data-title="Ghana">Ghana</option>
+      <option value='gq' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag gq" data-title="Equatorial Guinea">Equatorial Guinea</option>
+      <option value='el' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag gr" data-title="Greek">Greek</option>
+      <option value='gu' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag in" data-title="Gujarati">Gujarati</option>
+      <option value='ht' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ht" data-title="Haitian Creole">Haitian Creole</option>
+      <option value='haw' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag haw" data-title="Hawaiian">Hawaiian</option>
+      <option value='iw' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag il" data-title="Hebbrew">Hebbrew</option>
+      <option value='hi' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag in" data-title="Hindi">Hindi</option>
+      <option value='cn' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag cn" data-title="Hmong">Hmong</option>
+      <option value='hu' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag hu" data-title="Hungarian">Hungarian</option>
+      <option value='is' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag is" data-title="Icelandic">Icelandic</option>
+      <option value='id' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag id" data-title="Indonesia">Indonesian</option>
+      <option value='iq' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag iq" data-title="Iraq">Iraq</option>
+      <option value='ga' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ie" data-title="Irish">Irish</option>
+      <option value='it' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag it" data-title="Italian">Italian</option>
+      <option value='ci' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ci" data-title="Ivory Coast">Ivory Cost</option>
+      <option value='ja' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag jp" data-title="Japanese">Japanese</option>
+      <option value='jw' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag id" data-title="Javanese">Javanese</option>
+      <option value='kn' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag in" data-title="Kannada">Kannada</option>
+      <option value='kk' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag kz" data-title="Kazakh">Kazakh</option>
+      <option value='ke' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ke" data-title="Kenya">Kenya</option>
+      <option value='km' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag kh" data-title="Khmer">Khmer</option>
+      <option value='kg' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag kg" data-title="Kyrgyzstan">Kyrgyzstan</option>
+      <option value='ko' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag kp" data-title="Korean">Korean</option>
+      <option value='lo' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag la" data-title="Lao">Lao</option>
+      <option value='lv' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag lv" data-title="Latvian">Latvian</option>
+      <option value='ls' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ls" data-title="Lesotho">Lesotho</option>
+      <option value='ly' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ly" data-title="Libya">Libya</option>
+      <option value='lt' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag lt" data-title="Lithuanian">Lithuanian</option>
+      <option value='lb' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag lu" data-title="Luxembourgish">Luxembourgish</option>
+      <option value='mk' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag mk" data-title="Macedonian">Macedonian</option>
+      <option value='mw' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag mw" data-title="Malawi">Malawi</option>
+      <option value='ml' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag in" data-title="Malayalam">Malayalam</option>
+      <option value='ms' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag my" data-title="Malaysian">Malaysian</option>
+      <option value='ml' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ml" data-title="Mali">Mali</option>
+      <option value='mt' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag mt" data-title="Maltese">Maltese</option>
+      <option value='mr' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag in" data-title="Marathi">Marathi</option>
+      <option value='mx' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag mx" data-title="Mexico">Mexico</option>
+      <option value='mn' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag mn" data-title="Mongolian">Mongolian</option>
+      <option value='ma' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ma" data-title="Morocco">Morocco</option>
+      <option value='my' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag mm" data-title="Burmese (Myanmar)">Burmese (Myanmar)</option>
+      <option value='ne' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ne" data-title="Niger">Niger</option>
+      <option value='ng' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ng" data-title="Nigeria">Nigeria</option>
+      <option value='ne' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag np" data-title="Nepali">Nepali</option>
+      <option value='mi' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag nz" data-title="New Zealand (Aotearoa)">New Zealand (Aotearoa)</option>
+      <option value='no' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag no" data-title="Norwegian">Norwegian</option>
+      <option value='pe' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag pe" data-title="Peru">Peru</option>
+      <option value='pl' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag pl" data-title="Polish">Polish</option>
+      <option value='pt' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag pt" data-title="Portugal">Portugal</option>
+      <option value='ro' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ro" data-title="Romanian">Romanian</option>
+      <option value='ru' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ru" data-title="Russian">Russian</option>
+      <option value='sm' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ws" data-title="Samoan">Samoan</option>
+      <option value='sa' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag sa" data-title="Saudi Arabia">Saudi Arabia</option>
+      <option value='sr' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag cs" data-title="Serbian">Serbian</option>
+      <option value='sn' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag zw" data-title="Shona">Shona</option>
+      <option value='sd' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag pk" data-title="Sindhi">Sindhi</option>
+      <option value='sg' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag sg" data-title="Singapore">Singapore</option>
+      <option value='si' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag lk" data-title="Sinhala">Sinhala</option>
+      <option value='sl' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag si" data-title="Slovenian">Slovenian</option>
+      <option value='sk' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag sk" data-title="Slovakian">Slovakian</option>
+      <option value='so' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag so" data-title="Somali">Somali</option>
+      <option value='es' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag es" data-title="Spain">Spain</option>
+      <option value='su' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag sd" data-title="Sudanese">Sudanese</option>
+      <option value='sv' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag se" data-title="Swedish">Swedish</option>
+      <option value='sy' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag sy" data-title="Syria">Syria</option>
+      <option value='tl' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ph" data-title="Tagalog">Tagalog</option>
+      <option value='tj' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag tj" data-title="Tajikistan">Tajikistan</option>
+      <option value='uk' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ua" data-title="Ukrainian">Ukrainian</option>
+      <option value='tz' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag tz" data-title="Tanzania">Tanzania</option>
+      <option value='te' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag in" data-title="Telugu">Telugu</option>
+      <option value='th' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag th" data-title="Thai">Thai</option>
+      <option value='bo' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag tib" data-title="Tibetan">Tibetan</option>
+      <option value='tg' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag tg" data-title="Togo">Togo</option>
+      <option value='tr' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag tr" data-title="Turkish">Turkish</option>
+      <option value='ug' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ug" data-title="Uganda">Uganda</option>
+      <option value='uk' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag uk" data-title="United Kingdom">United Kingdom</option>
+      <option value='us' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag us" data-title="United States">United States</option>
+      <option value='uz' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag uz" data-title="Uzbek">Uzbek</option>
+      <option value='va' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag va" data-title="Vatican City State (Holy See)">Vatican City</option>
+      <option value='vi' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag vn" data-title="Vietnamese">Vietnamese</option>
+      <option value='ye' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ye" data-title="Yemen">Yemen</option>
+      <option value='yi' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag de" data-title="Yiddish">Yiddish</option>
+      <option value='zm' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag zm" data-title="Zambia">Zambia</option>
+      <option value='zu' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag za" data-title="Zulu">Zulu</option>
+    </select></td>
+  </tr>
+  <tr>
+    <td valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top"><h3>By Json Data</h3></td>
+  </tr>
+  <tr>
+    <td valign="top"><div id="byjson"></div></td>
+  </tr>
+  <tr>
+    <td valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top"><h3>New Skin</h3></td>
+  </tr>
+  <tr>
+    <td valign="top">
+    <select name="mycomp" id="mycomp" style="width:258px;" data-maincss="blue">
+  <option name="one" value="msDropDown" title="images/msdropdown/skin2/icon-ok.gif">msDropDown</option>
+  <option  name="two" value="PrototypeCombobox" title="images/msdropdown/skin2/icon-ok.gif">Prototype Combobox</option>
+  <option value="jQuery Tabs" title="images/msdropdown/skin2/icon-ok.gif">jQuery Tabs</option>
+  <option value="Common Accordion" title="images/msdropdown/skin2/icon-ok.gif">Common Accordion</option>
+</select>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="500" valign="top">&nbsp;</td>
+  </tr>
+</table>
+</form>
+<p>&nbsp;</p>
+
+<script>
+function createByJson() {
+	var jsonData = [					
+					{description:'Choos your payment gateway', value:'', text:'Payment Gateway'},					
+					{image:'images/msdropdown/icons/Amex-56.png', description:'My life. My card...', value:'amex', text:'Amex'},
+					{image:'images/msdropdown/icons/Discover-56.png', description:'It pays to Discover...', value:'Discover', text:'Discover'},
+					{image:'images/msdropdown/icons/Mastercard-56.png', title:'For everything else...', description:'For everything else...', value:'Mastercard', text:'Mastercard'},
+					{image:'images/msdropdown/icons/Cash-56.png', description:'Sorry not available...', value:'cash', text:'Cash on devlivery', disabled:true},
+					{image:'images/msdropdown/icons/Visa-56.png', description:'All you need...', value:'Visa', text:'Visa'},
+					{image:'images/msdropdown/icons/Paypal-56.png', description:'Pay and get paid...', value:'Paypal', text:'Paypal'}
+					];
+	$("#byjson").msDropDown({byJson:{data:jsonData, name:'payments2'}}).data("dd");
+}
+$(document).ready(function(e) {		
+	//no use
+	try {
+		var pages = $("#pages").msDropdown({on:{change:function(data, ui) {
+												var val = data.value;
+												if(val!="")
+													window.location = val;
+											}}}).data("dd");
+
+		var pagename = document.location.pathname.toString();
+		pagename = pagename.split("/");
+		pages.setIndexByValue(pagename[pagename.length-1]);
+		$("#ver").html(msBeautify.version.msDropdown);
+	} catch(e) {
+		//console.log(e);	
+	}
+	
+	$("#ver").html(msBeautify.version.msDropdown);
+		
+	//convert
+	$("select").msDropdown({roundedBorder:false});
+	createByJson();
+	$("#tech").data("dd");
+});
+function showValue(h) {
+	console.log(h.name, h.value);
+}
+$("#tech").change(function() {
+	console.log("by jquery: ", this.value);
+})
+//
+</script>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Smart Translator for Abantecart</title>
+
+<script type="text/javascript" src="msdropdown/js/jquery/jquery-1.9.0.min.js"></script>
+<!-- <msdropdown> -->
+<link rel="stylesheet" type="text/css" href="msdropdown/css/msdropdown/dd.css" />
+<script type="text/javascript" src="msdropdown/js/msdropdown/jquery.dd.js"></script>
+<!-- </msdropdown> -->
+
+<link rel="stylesheet" type="text/css" href="msdropdown/css/msdropdown/skin.css" />
+<link rel="stylesheet" type="text/css" href="msdropdown/css/msdropdown/flags.css" />
+<link rel="stylesheet" type="text/css" href="msdropdown/examples/css/sample.css" />
+
+<script type="text/javascript">
+        $(document).ready(function() {
+            $("#imgProg").show();
+            $('#LoadPage').load('form.html', function() {
+                $("#imgProg").hide();
+            });
+        });
+</script>
+
+</head>
+<body>
+<table width="100%" border="0" cellspacing="1" cellpadding="5" class="topmenu">
+  <tr>
+    <td class="top"><h1>Smart Translator for Abantecart</h1></td>
+  </tr>
+  </table>
+
+<table width="100%" border="0" cellspacing="1" cellpadding="10" class="tblWhite" style="font-size:12pt; font-family:Arial, Helvetica, sans-serif;">
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><h3>What is Smart Translator?</h3>
+    
+    <p>The Smart Translator extension helps you to integrate full-page 
+	translation into Abantecart.</p>
+	<p>Smart Translator is designed to work with GTranslate, an enhanced third-party translation service 
+	built on the Google Translate platform. You need a GTranslate Enterprise account in order for this extension to work successfully. With GTranslate Enterprise, 
+	you get up to 10GB translation traffic and you can have your website 
+	translated into as many as 100+ languages! Take advantage of enhanced 
+	automatic translation and edit your translations on the spot. With this solution, you have full control of your 
+translated content. The extension is totally Abantecart-independent, making no use of Abantecart's built-in translation feature! Translation is reflected in the page source code and therefore indexable by Google Search. Translations are hosted by GTranslate's <abbr title="Content Delivery Network">CDN</abbr>.<br /><br />
+
+	1.
+
+To get started, fill out the forms below.</p>
+</td>
+  </tr>
+  <tr>
+    <td valign="top" style="height: 35px"><h3 style="margin-left: 7px">Status: On / Off</h3></td>
+  </tr>
+  <tr>
+    <td valign="top" style="height: 28px">  
+    
+    <div>   
+        <div id="LoadPage" class="divPage" style="width: 725px; height: 475px; margin-left: 8px"></div>
+        <img alt="Progress" src="msdropdown/images/msdropdown/icons/loading.gif" id="imgProg"
+        visible="false" style="position: relative; top: -350px; left: 150px" />
+    </div>
+    
+    </td>
+  </tr>
+  <tr>
+    <td height="500" valign="top"><br /><br />
+2. Now go to Admin > System > Localization > Languages and configure the languages of your choice.<br /><br />
+3. Sign up for a <a href="https://gtranslate.io/?xyz=2680#pricing">GTranslate Enterprise</a> account.<br /><br />
+4. Create a c-name for each language in your cPanel.* (Example: "fr" for French, "de" for Deutsch or German, etc.)<br /><br />
+
+* NOTE: Don&#39;t create actual language subdomains since the translated content 
+will be hosted by GTranslate&#39;s Content Delivery Network.<br /><br />
+
+5. If you experience any issue with the language flags in the dropdown menu, add this code to your htaccess file:<br /><br /> 
+
+# Added at Assistech&#39;s suggestion to fix problem of language flags in dropdown
+<br />
+<br />
+&lt;FilesMatch &quot;\.(ttf|ttc|otf|eot|woff)$&quot;&gt;<br />
+&lt;IfModule mod_headers.c&gt;<br />
+Header set Access-Control-Allow-Origin &quot;*&quot;<br />
+&lt;/IfModule&gt;<br />
+&lt;/FilesMatch&gt;<br /><br />
+
+6. If you have any issue with the translation of currency in certain languages, simply edit the incorrect translation. For example: “€” must be changed to “XNUMX €”.<br /><br />
+
+NOTE:<br /><br /> 
+
+To access the translation editor, add "?language_edit=1" at the end of the URL for the page you want to edit. For example: 
+https://ru.mydomain.com/store/?language_edit=1<br /><br />
+
+If the URL already contains a question mark (?), use an ampersand (&) instead. Example: 
+https://ru.mydomain.com/store/?currency=GBP&language_edit=1<br /><br />
+
+If you have any questions about translation, please <a href="http://gtranslate.net">contact GTranslate</a> directly. For installation questions, feel free to <a href="https://assistech.com/store/contact">contact us</a>.<br /><br />
+
+</td>
+  </tr>
+</table>
+<br /><br />
+
+
+</body>
+</html>

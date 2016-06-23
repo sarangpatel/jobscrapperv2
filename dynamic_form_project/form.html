@@ -1,0 +1,580 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=windows-1252" http-equiv="Content-Type" />
+<title>Form Page</title>
+<script type="text/javascript" src="msdropdown/js/jquery/jquery-1.9.0.min.js"></script>
+<!-- <msdropdown> -->
+<link rel="stylesheet" type="text/css" href="msdropdown/css/msdropdown/dd.css" />
+<script type="text/javascript" src="msdropdown/js/msdropdown/jquery.dd.js"></script>
+<!-- </msdropdown> -->
+<link rel="stylesheet" type="text/css" href="msdropdown/css/msdropdown/skin.css" />
+<link rel="stylesheet" type="text/css" href="msdropdown/css/msdropdown/flags.css" />
+
+</head>
+
+<body style="font-family:Arial, Helvetica, sans-serif;">
+<h3>Source Language</h3>the language translating from<br /><br />
+
+<form action="msdropdown/examples/submitdata.php" method="post" enctype="multipart/form-data" name="frmdata" onsubmit="return checkData(this)">
+    
+	<select name="lang_1" id="lang_1" style="width:300px; font-size :11pt; font-family:Arial, Helvetica, sans-serif;">
+      <option selected="selected" disabled="disabled">Select a language</option>
+      <option value='af' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag za" data-title="Afrikaans">Afrikaans</option>
+      <option value='sq' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag al" data-title="Shqiptar">Albanian</option>
+      <option value='am' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag et" data-title="&#4768;&#4635;&#4653;&#4763;">Amharic</option>
+      <option value='ar' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;">Arabic</option>
+      <option value='hy' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag am" data-title="&#1392;&#1377;&#1397;&#1381;&#1408;&#1381;&#1398;">Armenian</option>
+      <option value='az' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag az" data-title="Az&#601;rbaycanl&#305;">Azerbaijani</option>
+      <option value='eu' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag eusk" data-title="Euskal">Basque (Euskadi)</option>
+      <option value='be' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag by" data-title="&#1073;&#1077;&#1083;&#1072;&#1088;&#1091;&#1089;&#1082;&#1110;">Belarusian</option>
+      <option value='bn' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag bd" data-title="&#2476;&#2494;&#2457;&#2494;&#2482;&#2495;">Bengali</option>
+      <option value='bs' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ba" data-title="Bosanski">Bosnian</option>
+      <option value='bg' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag bg" data-title="&#1073;&#1098;&#1083;&#1075;&#1072;&#1088;&#1089;&#1082;&#1080;">Bulgarian</option>
+      <option value='my' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag mm" data-title="Burmese (Myanmar)">Burmese (Myanmar)</option>
+      <option value='ca' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="Catal&#224;">Catalan</option>
+      <option value='ceb' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ph" data-title="Cebuano">Cebuano</option>
+      <option value='ny' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="Chichewa">Chichewa</option>
+      <option value='cn' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag cn" data-title="&#27721;&#35821;/&#28450;&#35486;">Chinese (Simplified)</option>
+      <option value='zh-tw' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag tw" data-title="&#20013;&#25991;">Chinese (Traditional)</option>
+      <option value='co' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag it" data-title="Corsu">Corsican</option>
+      <option value='hr' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag cr" data-title="Hrvatski">Croatian (Hrvatski)</option>
+      <option value='cs' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag cz" data-title="&#269;&#154;tina">Czech</option>
+      <option value='da' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag dk" data-title="Dansk">Danish</option>
+      <option value='nl' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag nl" data-title="Nederlands">Dutch</option>
+      <option value='en' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="English">English</option>
+      <option value='et' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ee" data-title="Eesti">Estonian</option>
+      <option value='fa' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ir" data-title="&#1601;&#1575;&#1585;&#1587;&#1740;">Farsi</option>
+      <option value='fi' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag fi" data-title="Suomalainen">Finnish</option>
+      <option value='fr' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag fr" data-title="Fran&#231;ais">French</option>
+      <option value='fy' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="Frysk">Frisian</option>
+      <option value='gd' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag scotland" data-title="G&#224;idhlig">Gaelic</option>
+      <option value='gal' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag gal" data-title="Galego">Galician</option>
+      <option value='ka' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ge" data-title="&#4325;&#4304;&#4320;&#4311;&#4323;&#4314;&#4312;">Georgian</option>
+      <option value='de' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag de" data-title="Deutsch">German</option>
+      <option value='el' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag gr" data-title="&#949;&#955;&#955;&#951;&#957;&#953;&#954;&#940;">Greek</option>
+      <option value='gu' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag in" data-title="&#2711;&#2753;&#2716;&#2736;&#2750;&#2724;&#2752;">Gujarati</option>
+      <option value='ht' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ht" data-title="Krey&#242;l Ayisyen">Haitian Creole</option>
+      <option value='ha' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="Hausa">Hausa</option>
+      <option value='haw' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag haw" data-title="&#699;&#332;lelo Hawai&#699;i">Hawaiian</option>
+      <option value='iw' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag il" data-title="&#1506;&#1489;&#1512;&#1497;">Hebbrew</option>
+      <option value='hi' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag in" data-title="&#2361;&#2367;&#2306;&#2342;&#2368;">Hindi</option>
+      <option value='cn' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag cn" data-title="Hmong">Hmong</option>
+      <option value='hu' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag hu" data-title="Magyar">Hungarian</option>
+      <option value='is' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag is" data-title="Icelandic">Icelandic</option>
+      <option value='ig' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="Igbo">Igbo</option>
+      <option value='id' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag id" data-title="bahasa Indonesia">Indonesian</option>
+      <option value='ga' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ie" data-title="Gaeilge">Irish</option>
+      <option value='it' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag it" data-title="Italiano">Italian</option>
+      <option value='ja' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag jp" data-title="&#26085;&#26412;&#35486;">Japanese</option>
+      <option value='jw' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag id" data-title="basa Jawa">Javanese</option>
+      <option value='kn' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag in" data-title="&#3221;&#3240;&#3277;&#3240;&#3233;">Kannada</option>
+      <option value='kk' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag kz" data-title="&#1178;&#1072;&#1079;&#1072;&#1179;">Kazakh</option>
+      <option value='km' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag kh" data-title="&#6039;&#6070;&#6047;&#6070;&#6017;&#6098;&#6040;&#6082;&#6042;">Khmer</option>
+      <option value='ko' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag kp" data-title="&#54620;&#44397;&#50612;">Korean</option>
+      <option value='ku' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag kurdistan" data-title="Kurd&#238;">Kurdish</option>
+      <option value='ky' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag kg" data-title="&#1050;&#1099;&#1088;&#1075;&#1099;&#1079;&#1095;&#1072;">Kyrgyz</option>
+      <option value='lo' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag la" data-title="&#3749;&#3762;&#3751;">Lao</option>
+      <option value='la' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag va" data-title="Latin">Latin</option>
+      <option value='lv' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag lv" data-title="Latvijas">Latvian</option>
+      <option value='lt' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag lt" data-title="Lietuvi&#371; kalba">Lithuanian</option>
+      <option value='lb' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag lu" data-title="L&#235;tzebuergesch">Luxembourgish</option>
+      <option value='mk' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag mk" data-title="&#1052;&#1072;&#1082;&#1077;&#1076;&#1086;&#1085;&#1089;&#1082;&#1080;">Macedonian</option>
+      <option value='mg' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="Malagasy">Malagasy</option>
+      <option value='ml' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag in" data-title="&#3374;&#3378;&#3375;&#3390;&#3379;&#3330;">Malayalam</option>
+      <option value='ms' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag my" data-title="bahasa Malaysia">Malaysian</option>
+      <option value='mt' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag mt" data-title="Malti">Maltese</option>
+      <option value='mi' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag nz" data-title="Maori">Maori</option>
+      <option value='mr' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag in" data-title="&#2350;&#2352;&#2366;&#2336;&#2368;">Marathi</option>
+      <option value='mn' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag mn" data-title="&#1052;&#1086;&#1085;&#1075;&#1086;&#1083;">Mongolian</option>
+      <option value='ne' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag np" data-title="&#2344;&#2375;&#2346;&#2366;&#2354;&#2368;">Nepali</option>
+      <option value='no' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag no" data-title="Norsk">Norwegian</option>
+      <option value='ps' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="&#1662;&#1690;&#1578;&#1608;">Pashto</option>
+      <option value='pl' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag pl" data-title="Polski">Polish</option>
+      <option value='pt' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="Portugu&#234;s">Portuguese</option>
+      <option value='pa' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="&#2602;&#2672;&#2588;&#2622;&#2604;&#2624; &#2598;&#2631;">Punjabi</option>
+      <option value='ro' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ro" data-title="Rom&#226;n&#259;">Romanian</option>
+      <option value='ru' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ru" data-title="&#1088;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;">Russian</option>
+      <option value='sm' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ws" data-title="gagana Samoa">Samoan</option>
+      <option value='sr' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag si" data-title="&#1057;&#1088;&#1087;&#1089;&#1082;&#1080;">Serbian</option>
+      <option value='st' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="Sesotho">Sesotho</option>
+      <option value='sn' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag zw" data-title="Shona">Shona</option>
+      <option value='sd' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag pk" data-title="&#1587;&#1606;&#1676;&#1610;">Sindhi</option>
+      <option value='si' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag lk" data-title="&#3523;&#3538;&#3458;&#3524;&#3517;">Sinhala</option>
+      <option value='sk' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag sk" data-title="Slovensk&#253;">Slovakian</option>
+      <option value='sl' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag si" data-title="Slovenski">Slovenian</option>
+      <option value='so' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag so" data-title="Soomaali">Somali</option>
+      <option value='es' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="Espa&#241;ol">Spanish</option>
+      <option value='su' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag sd" data-title="Sunda">Sudanese</option>
+      <option value='sw' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="Kiswahili">Swahili</option>
+      <option value='sv' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag se" data-title="Svensk">Swedish</option>
+      <option value='tl' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ph" data-title="Tagalog">Tagalog</option>
+      <option value='tg' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="&#1058;&#1086;&#1207;&#1080;&#1082;&#1080;&#1089;&#1090;&#1086;&#1085;">Tajik</option>
+      <option value='ta' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="&#2980;&#2990;&#3007;&#2996;&#3021;">Tamil</option>
+      <option value='te' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag in" data-title="&#3108;&#3142;&#3122;&#3137;&#3095;&#3137;">Telugu</option>
+      <option value='th' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag th" data-title="&#3109;&#3134;&#3119;&#3149;...">Thai</option>
+      <option value='bo' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag tib" data-title="Tibetan">Tibetan</option>
+      <option value='tr' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag tr" data-title="T&#252;rk&#231;e">Turkish</option>
+      <option value='uk' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ua" data-title="&#1091;&#1082;&#1088;&#1072;&#1111;&#1085;&#1089;&#1100;&#1082;&#1080;&#1081;">Ukrainian</option>
+      <option value='ur' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="&#1575;&#1585;&#1583;&#1608;">Urdu</option>
+      <option value='uz' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag uz" data-title="O'zbekiston">Uzbek</option>
+      <option value='vi' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag vn" data-title="Ti&#7871;ng Vi&#7879;t">Vietnamese</option>
+      <option value='cy' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag wales" data-title="Cymraeg">Welsh</option>
+      <option value='xh' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="isiXhosa">Xhosa</option>
+      <option value='yi' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag de" data-title="&#1497;&#1497;&#1460;&#1491;&#1497;&#1513;">Yiddish</option>
+      <option value='yo' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="Yor&#249;b&#225;">Yoruba</option>
+      <option value='zu' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag za" data-title="Zulu">Zulu</option>
+    </select>
+    
+    <select name="flag_1" id="flag_1" style="width: 300px; position:relative; top: 35px; left: -305px">
+        <option selected="selected" disabled="disabled">Pick a country flag</option>
+        <option class="ar" selected="selected" disabled="disabled" >Pick a country flag for Arabic:</option>
+        <option value="dz" class="ar" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag dz" data-title="Algeria">Algeria</option>
+        <option value="ar-lg" class="ar" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ar-lg" data-title="Arab League">Arab League</option>
+        <option value="eg" class="ar" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag eg" data-title="Egypt">Egypt</option>
+        <option value="iq" class="ar" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag iq" data-title="Iraq">Irag</option>
+        <option value="ma" class="ar" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ma" data-title="Morocco">Morocco</option>
+        <option value="sa" class="ar" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag sa" data-title="Saudi Arabia">Saudi Arabia</option>
+        <option value="sd" class="ar" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag sd" data-title="Sudan">Sudan</option>
+        <option value="sy" class="ar" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag sy" data-title="Syria">Syria</option>
+        <option class="ca" selected="selected" disabled="disabled">Pick a country flag for Catalan:</option>
+        <option value="ad" class="ca" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ad" data-title="Andorra">Andorra</option>
+        <option value="cat" class="ca" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag cat" data-title="Catalonia">Catalonia</option>
+        <option class="ny" disabled="disabled" selected="selected">Pick a country flag for Chichewa:</option>
+        <option value="mu" class="ny" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag mu" data-title="Malawi">Malawi</option>
+        <option value="mz" class="ny" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag mz" data-title="Mozambique">Mozambique</option>
+        <option value="zm" class="ny" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag zm" data-title="Zambia">Zambia</option>
+        <option value="zw" class="ny" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag zw" data-title="Zimbabwe">Zimbabwe</option>
+        <option class="en" disabled="disabled" selected="selected">Pick a country flag for English:</option>
+        <option value="us" class="en" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag us" data-title="United States">United States</option>
+        <option value="gb" class="en" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag gb" data-title="Great Britain">Great Britain</option>
+        <option class="fy" disabled="disabled" selected="selected">Pick a country flag for Frisian:</option>
+        <option value="de" class="fy" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag de" data-title="Germany">Germany</option>
+        <option value="nl" class="fy" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag nl" data-title="Netherlands">Netherlands</option>
+        <option class="ha" disabled="disabled" selected="selected">Pick a country flag for Hausa:</option>
+        <option value="bj" class="ha" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag bj" data-title="Benin">Benin</option>
+        <option value="cr" class="ha" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag cr" data-title="Cameroon">Cameroon</option>
+        <option value="gh" class="ha" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag gh" data-title="Ghana">Ghana</option>
+        <option value="ci" class="ha" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ci" data-title="Ivory Coast">Ivory Coast</option>
+        <option value="ne" class="ha" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ne" data-title="Niger">Niger</option>
+        <option value="ng" class="ha" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ng" data-title="Nigeria">Nigeria</option>
+        <option value="sd" class="ha" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag sd" data-title="Sudan">Sudan</option>
+        <option value="tg" class="ha" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag tg" data-title="Togo">Togo</option>
+        <option class="ig" disabled="disabled" selected="selected">Pick a country flag for Igbo:</option>
+        <option value="gg" class="ig" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag gg" data-title="Equatorial Guinea">Equatorial Guinea</option>
+        <option value="ng" class="ig" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ng" data-title="Nigeria">Nigeria</option>
+        <option class="mg" disabled="disabled" selected="selected">Pick a country flag for Malagasy:</option>
+        <option value="km" class="mg" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag km" data-title="Comoros">Comoros</option>
+        <option value="mg" class="mg" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag mg" data-title="Madagascar">Madagascar</option>
+        <option class="ps" disabled="disabled" selected="selected">Pick a country flag for Pashto:</option>
+        <option value="af" class="ps" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag af" data-title="Afghanistan">Afghanistan</option>
+        <option value="pk" class="ps" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag pk" data-title="Pakistan">Pakistan</option>
+        <option class="pt" disabled="disabled" selected="selected">Pick a country flag for Portuguese:</option>
+        <option value="br" class="pt" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag br" data-title="Brazil">Brazil</option>
+        <option value="pt" class="pt" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag pt" data-title="Portugal">Portugal</option>
+        <option class="pa" disabled="disabled" selected="selected">Pick a country flag for Punjabi:</option>
+        <option value="in" class="pa" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag in" data-title="India">India</option>
+        <option value="pk" class="pa" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag pk" data-title="Pakistan">Pakistan</option>
+        <option class="st" disabled="disabled" selected="selected">Pick a country flag for Sesotho:</option>
+        <option value="ls" class="st" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ls" data-title="Lesotho">Lesotho</option>
+        <option value="za" class="st" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag za" data-title="South Africa">South Africa</option>
+        <option class="es" disabled="disabled" selected="selected">Pick a country flag for Spanish:</option>
+        <option value="ar" class="es" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ar" data-title="Argentina">Argentina</option>
+        <option value="co" class="es" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag co" data-title="Colombia">Colombia</option>
+        <option value="mx" class="es" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag mx" data-title="Mexico">Mexico</option>
+        <option value="pe" class="es" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag pe" data-title="Peru">Peru</option>
+        <option value="es" class="es" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag es" data-title="Spain">Spain</option>
+        <option class="sw" disabled="disabled" selected="selected">Pick a country flag for Swahili:</option>
+        <option value="km" class="sw" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag km" data-title="Comoros">Comoros</option>
+        <option value="cg" class="sw" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag cg" data-title="Congo">Congo</option>
+        <option value="ke" class="sw" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ke" data-title="Kenya">Kenya</option>
+        <option value="ta" class="sw" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ta" data-title="Ivory Coast">Tanzania</option>
+        <option value="ug" class="sw" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ug" data-title="Niger">Uganda</option>
+        <option class="tg" disabled="disabled" selected="selected">Pick a country flag for Tajik:</option>
+        <option value="tj" class="tg" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag tj" data-title="Tajikistan">Tajikistan</option>
+        <option value="uz" class="tg" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag uz" data-title="Uzbekistan">Uzbekistan</option>
+        <option class="ta" disabled="disabled" selected="selected">Pick a country flag for Tamil:</option>
+        <option value="in" class="ta" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag in" data-title="India">India</option>
+        <option value="sg" class="ta" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag sg" data-title="Singapore">Singapore</option>
+        <option value="lk" class="ta" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag lk" data-title="Sri Lanka">Sri Lanka</option>
+        <option class="ur" disabled="disabled" selected="selected">Pick a country flag for Urdu:</option>
+        <option value="in" class="ur" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag in" data-title="India">India</option>
+        <option value="pk" class="ur" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag pk" data-title="Pakistan">Pakistan</option>
+        <option class="xh" disabled="disabled" selected="selected">Pick a country flag for Xhosa:</option>
+        <option value="za" class="xh" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag za" data-title="South Africa">South Africa</option>
+        <option value="zw" class="xh" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag zw" data-title="Zimbabwe">Zimbabwe</option>
+        <option class="yo" disabled="disabled" selected="selected">Pick a country flag for Yoruba:</option>
+        <option value="bj" class="yo" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag bj" data-title="Benin">Benin</option>
+        <option value="ng" class="yo" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ng" data-title="Nigeria">Nigeria</option>
+        <option class="zzz" disabled="disabled" selected="selected">&nbsp;</option>
+       </select>
+       <input type="hidden" name="lang_name_1" value=""/>
+
+    <br /><br /><br /><br />
+    <h3>Target Language(s)</h3>the language(s) translating to<br /><br />
+    Hold <strong>Ctrl</strong> key down then <strong>click</strong> to select. If no response, try Ctrl + arrow down then click.<br /><br />
+    <select name="lang_2[]" id="lang_2" style="width:300px; font-size :11pt; font-family:Arial, Helvetica, sans-serif;" multiple>
+        <option selected="selected" disabled="disabled">Select one or more languages</option>
+      <option value='af' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag za" data-title="Afrikaans">Afrikaans</option>
+      <option value='sq' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag al" data-title="Shqiptar">Albanian</option>
+      <option value='am' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag et" data-title="&#4768;&#4635;&#4653;&#4763;">Amharic</option>
+      <option value='ar' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;">Arabic</option>
+      <option value='hy' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag am" data-title="&#1392;&#1377;&#1397;&#1381;&#1408;&#1381;&#1398;">Armenian</option>
+      <option value='az' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag az" data-title="Az&#601;rbaycanl&#305;">Azerbaijani</option>
+      <option value='eu' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag eusk" data-title="Euskal">Basque (Euskadi)</option>
+      <option value='be' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag by" data-title="&#1073;&#1077;&#1083;&#1072;&#1088;&#1091;&#1089;&#1082;&#1110;">Belarusian</option>
+      <option value='bn' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag bd" data-title="&#2476;&#2494;&#2457;&#2494;&#2482;&#2495;">Bengali</option>
+      <option value='bs' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ba" data-title="Bosanski">Bosnian</option>
+      <option value='bg' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag bg" data-title="&#1073;&#1098;&#1083;&#1075;&#1072;&#1088;&#1089;&#1082;&#1080;">Bulgarian</option>
+      <option value='my' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag mm" data-title="Burmese (Myanmar)">Burmese (Myanmar)</option>
+      <option value='ca' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="Catal&#224;">Catalan</option>
+      <option value='ceb' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ph" data-title="Cebuano">Cebuano</option>
+      <option value='ny' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="Chichewa">Chichewa</option>
+      <option value='cn' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag cn" data-title="&#27721;&#35821;/&#28450;&#35486;">Chinese (Simplified)</option>
+      <option value='zh-tw' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag tw" data-title="&#20013;&#25991;">Chinese (Traditional)</option>
+      <option value='co' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag it" data-title="Corsu">Corsican</option>
+      <option value='hr' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag cr" data-title="Hrvatski">Croatian (Hrvatski)</option>
+      <option value='cs' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag cz" data-title="&#269;&#154;tina">Czech</option>
+      <option value='da' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag dk" data-title="Dansk">Danish</option>
+      <option value='nl' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag nl" data-title="Nederlands">Dutch</option>
+      <option value='en' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="English">English</option>
+      <option value='et' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ee" data-title="Eesti">Estonian</option>
+      <option value='fa' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ir" data-title="&#1601;&#1575;&#1585;&#1587;&#1740;">Farsi</option>
+      <option value='fi' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag fi" data-title="Suomalainen">Finnish</option>
+      <option value='fr' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag fr" data-title="Fran&#231;ais">French</option>
+      <option value='fy' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="Frysk">Frisian</option>
+      <option value='gd' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag scotland" data-title="G&#224;idhlig">Gaelic</option>
+      <option value='gal' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag gal" data-title="Galego">Galician</option>
+      <option value='ka' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ge" data-title="&#4325;&#4304;&#4320;&#4311;&#4323;&#4314;&#4312;">Georgian</option>
+      <option value='de' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag de" data-title="Deutsch">German</option>
+      <option value='el' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag gr" data-title="&#949;&#955;&#955;&#951;&#957;&#953;&#954;&#940;">Greek</option>
+      <option value='gu' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag in" data-title="&#2711;&#2753;&#2716;&#2736;&#2750;&#2724;&#2752;">Gujarati</option>
+      <option value='ht' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ht" data-title="Krey&#242;l Ayisyen">Haitian Creole</option>
+      <option value='ha' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="Hausa">Hausa</option>
+      <option value='haw' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag haw" data-title="&#699;&#332;lelo Hawai&#699;i">Hawaiian</option>
+      <option value='iw' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag il" data-title="&#1506;&#1489;&#1512;&#1497;">Hebbrew</option>
+      <option value='hi' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag in" data-title="&#2361;&#2367;&#2306;&#2342;&#2368;">Hindi</option>
+      <option value='cn' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag cn" data-title="Hmong">Hmong</option>
+      <option value='hu' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag hu" data-title="Magyar">Hungarian</option>
+      <option value='is' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag is" data-title="Icelandic">Icelandic</option>
+      <option value='ig' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="Igbo">Igbo</option>
+      <option value='id' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag id" data-title="bahasa Indonesia">Indonesian</option>
+      <option value='ga' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ie" data-title="Gaeilge">Irish</option>
+      <option value='it' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag it" data-title="Italiano">Italian</option>
+      <option value='ja' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag jp" data-title="&#26085;&#26412;&#35486;">Japanese</option>
+      <option value='jw' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag id" data-title="basa Jawa">Javanese</option>
+      <option value='kn' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag in" data-title="&#3221;&#3240;&#3277;&#3240;&#3233;">Kannada</option>
+      <option value='kk' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag kz" data-title="&#1178;&#1072;&#1079;&#1072;&#1179;">Kazakh</option>
+      <option value='km' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag kh" data-title="&#6039;&#6070;&#6047;&#6070;&#6017;&#6098;&#6040;&#6082;&#6042;">Khmer</option>
+      <option value='ko' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag kp" data-title="&#54620;&#44397;&#50612;">Korean</option>
+      <option value='ku' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag kurdistan" data-title="Kurd&#238;">Kurdish</option>
+      <option value='ky' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag kg" data-title="&#1050;&#1099;&#1088;&#1075;&#1099;&#1079;&#1095;&#1072;">Kyrgyz</option>
+      <option value='lo' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag la" data-title="&#3749;&#3762;&#3751;">Lao</option>
+      <option value='la' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag va" data-title="Latin">Latin</option>
+      <option value='lv' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag lv" data-title="Latvijas">Latvian</option>
+      <option value='lt' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag lt" data-title="Lietuvi&#371; kalba">Lithuanian</option>
+      <option value='lb' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag lu" data-title="L&#235;tzebuergesch">Luxembourgish</option>
+      <option value='mk' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag mk" data-title="&#1052;&#1072;&#1082;&#1077;&#1076;&#1086;&#1085;&#1089;&#1082;&#1080;">Macedonian</option>
+      <option value='mg' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="Malagasy">Malagasy</option>
+      <option value='ml' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag in" data-title="&#3374;&#3378;&#3375;&#3390;&#3379;&#3330;">Malayalam</option>
+      <option value='ms' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag my" data-title="bahasa Malaysia">Malaysian</option>
+      <option value='mt' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag mt" data-title="Malti">Maltese</option>
+      <option value='mi' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag nz" data-title="Maori">Maori</option>
+      <option value='mr' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag in" data-title="&#2350;&#2352;&#2366;&#2336;&#2368;">Marathi</option>
+      <option value='mn' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag mn" data-title="&#1052;&#1086;&#1085;&#1075;&#1086;&#1083;">Mongolian</option>
+      <option value='ne' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag np" data-title="&#2344;&#2375;&#2346;&#2366;&#2354;&#2368;">Nepali</option>
+      <option value='no' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag no" data-title="Norsk">Norwegian</option>
+      <option value='ps' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="&#1662;&#1690;&#1578;&#1608;">Pashto</option>
+      <option value='pl' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag pl" data-title="Polski">Polish</option>
+      <option value='pt' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="Portugu&#234;s">Portuguese</option>
+      <option value='pa' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="&#2602;&#2672;&#2588;&#2622;&#2604;&#2624; &#2598;&#2631;">Punjabi</option>
+      <option value='ro' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ro" data-title="Rom&#226;n&#259;">Romanian</option>
+      <option value='ru' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ru" data-title="&#1088;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;">Russian</option>
+      <option value='sm' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ws" data-title="gagana Samoa">Samoan</option>
+      <option value='sr' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag si" data-title="&#1057;&#1088;&#1087;&#1089;&#1082;&#1080;">Serbian</option>
+      <option value='st' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="Sesotho">Sesotho</option>
+      <option value='sn' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag zw" data-title="Shona">Shona</option>
+      <option value='sd' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag pk" data-title="&#1587;&#1606;&#1676;&#1610;">Sindhi</option>
+      <option value='si' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag lk" data-title="&#3523;&#3538;&#3458;&#3524;&#3517;">Sinhala</option>
+      <option value='sk' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag sk" data-title="Slovensk&#253;">Slovakian</option>
+      <option value='sl' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag si" data-title="Slovenski">Slovenian</option>
+      <option value='so' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag so" data-title="Soomaali">Somali</option>
+      <option value='es' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="Espa&#241;ol">Spanish</option>
+      <option value='su' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag sd" data-title="Sunda">Sudanese</option>
+      <option value='sw' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="Kiswahili">Swahili</option>
+      <option value='sv' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag se" data-title="Svensk">Swedish</option>
+      <option value='tl' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ph" data-title="Tagalog">Tagalog</option>
+      <option value='tg' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="&#1058;&#1086;&#1207;&#1080;&#1082;&#1080;&#1089;&#1090;&#1086;&#1085;">Tajik</option>
+      <option value='ta' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="&#2980;&#2990;&#3007;&#2996;&#3021;">Tamil</option>
+      <option value='te' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag in" data-title="&#3108;&#3142;&#3122;&#3137;&#3095;&#3137;">Telugu</option>
+      <option value='th' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag th" data-title="&#3109;&#3134;&#3119;&#3149;...">Thai</option>
+      <option value='bo' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag tib" data-title="Tibetan">Tibetan</option>
+      <option value='tr' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag tr" data-title="T&#252;rk&#231;e">Turkish</option>
+      <option value='uk' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ua" data-title="&#1091;&#1082;&#1088;&#1072;&#1111;&#1085;&#1089;&#1100;&#1082;&#1080;&#1081;">Ukrainian</option>
+      <option value='ur' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="&#1575;&#1585;&#1583;&#1608;">Urdu</option>
+      <option value='uz' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag uz" data-title="O'zbekiston">Uzbek</option>
+      <option value='vi' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag vn" data-title="Ti&#7871;ng Vi&#7879;t">Vietnamese</option>
+      <option value='cy' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag wales" data-title="Cymraeg">Welsh</option>
+      <option value='xh' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="isiXhosa">Xhosa</option>
+      <option value='yi' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag de" data-title="&#1497;&#1497;&#1460;&#1491;&#1497;&#1513;">Yiddish</option>
+      <option value='yo' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag xx" data-title="Yor&#249;b&#225;">Yoruba</option>
+      <option value='zu' data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag za" data-title="Zulu">Zulu</option>
+    </select>
+
+    <input type="hidden"  name="flag_2" id="flag_2" value=""/>
+    <input type="hidden"  name="lang_name_2" value=""/>
+   
+    
+    <input name="send" type="submit" value="Submit" class="button info" id="send" style="font-size: 11pt; position: relative; top: 30px; left: 30px" /> 
+
+</form>
+		<!--- Add New Attribute to this Tag [Multiple]---->
+       <select name="flag_21[]" id="flag_21" style="width: 300px; position:relative; top: 2px; left: 0px">
+        <option class="ar" selected="selected" disabled="disabled">Pick a country flag for Arabic:</option>
+        <option value="dz" class="ar" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag dz" data-title="Algeria">Algeria</option>
+        <option value="ar-lg" class="ar" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ar-lg" data-title="Arab League">Arab League</option>
+        <option value="eg" class="ar" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag eg" data-title="Egypt">Egypt</option>
+        <option value="iq" class="ar" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag iq" data-title="Iraq">Irag</option>
+        <option value="ma" class="ar" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ma" data-title="Morocco">Morocco</option>
+        <option value="sa" class="ar" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag sa" data-title="Saudi Arabia">Saudi Arabia</option>
+        <option value="sd" class="ar" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag sd" data-title="Sudan">Sudan</option>
+        <option value="sy" class="ar" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag sy" data-title="Syria">Syria</option>
+        <option class="ca" selected="selected" disabled="disabled">Pick a country flag for Catalan:</option>
+        <option value="ad" class="ca" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ad" data-title="Andorra">Andorra</option>
+        <option value="cat" class="ca" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag cat" data-title="Catalonia">Catalonia</option>
+        <option class="ny" disabled="disabled" selected="selected">Pick a country flag for Chichewa:</option>
+        <option value="mu" class="ny" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag mu" data-title="Malawi">Malawi</option>
+        <option value="mz" class="ny" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag mz" data-title="Mozambique">Mozambique</option>
+        <option value="zm" class="ny" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag zm" data-title="Zambia">Zambia</option>
+        <option value="zw" class="ny" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag zw" data-title="Zimbabwe">Zimbabwe</option>
+        <option class="en" disabled="disabled" selected="selected">Pick a country flag for English:</option>
+        <option value="us" class="en" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag us" data-title="United States">United States</option>
+        <option value="gb" class="en" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag gb" data-title="Great Britain">Great Britain</option>
+        <option class="fy" disabled="disabled" selected="selected">Pick a country flag for Frisian:</option>
+        <option value="de" class="fy" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag de" data-title="Germany">Germany</option>
+        <option value="nl" class="fy" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag nl" data-title="Netherlands">Netherlands</option>
+        <option class="ha" disabled="disabled" selected="selected">Pick a country flag for Hausa:</option>
+        <option value="bj" class="ha" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag bj" data-title="Benin">Benin</option>
+        <option value="cr" class="ha" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag cr" data-title="Cameroon">Cameroon</option>
+        <option value="gh" class="ha" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag gh" data-title="Ghana">Ghana</option>
+        <option value="ci" class="ha" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ci" data-title="Ivory Coast">Ivory Coast</option>
+        <option value="ne" class="ha" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ne" data-title="Niger">Niger</option>
+        <option value="ng" class="ha" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ng" data-title="Nigeria">Nigeria</option>
+        <option value="sd" class="ha" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag sd" data-title="Sudan">Sudan</option>
+        <option value="tg" class="ha" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag tg" data-title="Togo">Togo</option>
+        <option class="ig" disabled="disabled" selected="selected">Pick a country flag for Igbo:</option>
+        <option value="gg" class="ig" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag gg" data-title="Equatorial Guinea">Equatorial Guinea</option>
+        <option value="ng" class="ig" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ng" data-title="Nigeria">Nigeria</option>
+        <option class="mg" disabled="disabled" selected="selected">Pick a country flag for Malagasy:</option>
+        <option value="km" class="mg" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag km" data-title="Comoros">Comoros</option>
+        <option value="mg" class="mg" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag mg" data-title="Madagascar">Madagascar</option>
+        <option class="ps" disabled="disabled" selected="selected">Pick a country flag for Pashto:</option>
+        <option value="af" class="ps" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag af" data-title="Afghanistan">Afghanistan</option>
+        <option value="pk" class="ps" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag pk" data-title="Pakistan">Pakistan</option>
+        <option class="pt" disabled="disabled" selected="selected">Pick a country flag for Portuguese:</option>
+        <option value="br" class="pt" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag br" data-title="Brazil">Brazil</option>
+        <option value="pt" class="pt" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag pt" data-title="Portugal">Portugal</option>
+        <option class="pa" disabled="disabled" selected="selected">Pick a country flag for Punjabi:</option>
+        <option value="in" class="pa" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag in" data-title="India">India</option>
+        <option value="pk" class="pa" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag pk" data-title="Pakistan">Pakistan</option>
+        <option class="st" disabled="disabled" selected="selected">Pick a country flag for Sesotho:</option>
+        <option value="ls" class="st" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ls" data-title="Lesotho">Lesotho</option>
+        <option value="za" class="st" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag za" data-title="South Africa">South Africa</option>
+        <option class="es" disabled="disabled" selected="selected">Pick a country flag for Spanish:</option>
+        <option value="ar" class="es" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ar" data-title="Argentina">Argentina</option>
+        <option value="co" class="es" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag co" data-title="Colombia">Colombia</option>
+        <option value="mx" class="es" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag mx" data-title="Mexico">Mexico</option>
+        <option value="pe" class="es" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag pe" data-title="Peru">Peru</option>
+        <option value="es" class="es" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag es" data-title="Spain">Spain</option>
+        <option class="sw" disabled="disabled" selected="selected">Pick a country flag for Swahili:</option>
+        <option value="km" class="sw" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag km" data-title="Comoros">Comoros</option>
+        <option value="cg" class="sw" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag cg" data-title="Congo">Congo</option>
+        <option value="ke" class="sw" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ke" data-title="Kenya">Kenya</option>
+        <option value="ta" class="sw" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ta" data-title="Ivory Coast">Tanzania</option>
+        <option value="ug" class="sw" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ug" data-title="Niger">Uganda</option>
+        <option class="tg" disabled="disabled" selected="selected">Pick a country flag for Tajik:</option>
+        <option value="tj" class="tg" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag tj" data-title="Tajikistan">Tajikistan</option>
+        <option value="uz" class="tg" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag uz" data-title="Uzbekistan">Uzbekistan</option>
+        <option class="ta" disabled="disabled" selected="selected">Pick a country flag for Tamil:</option>
+        <option value="in" class="ta" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag in" data-title="India">India</option>
+        <option value="sg" class="ta" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag sg" data-title="Singapore">Singapore</option>
+        <option value="lk" class="ta" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag lk" data-title="Sri Lanka">Sri Lanka</option>
+        <option class="ur" disabled="disabled" selected="selected">Pick a country flag for Urdu:</option>
+        <option value="in" class="ur" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag in" data-title="India">India</option>
+        <option value="pk" class="ur" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag pk" data-title="Pakistan">Pakistan</option>
+        <option class="xh" disabled="disabled" selected="selected">Pick a country flag for Xhosa:</option>
+        <option value="za" class="xh" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag za" data-title="South Africa">South Africa</option>
+        <option value="zw" class="xh" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag zw" data-title="Zimbabwe">Zimbabwe</option>
+        <option class="yo" disabled="disabled" selected="selected">Pick a country flag for Yoruba:</option>
+        <option value="bj" class="yo" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag bj" data-title="Benin">Benin</option>
+        <option value="ng" class="yo" data-image="msdropdown/images/msdropdown/icons/blank.gif" data-imagecss="flag ng" data-title="Nigeria">Nigeria</option>
+        <option class="zzz" disabled="disabled" selected="selected">&nbsp;</option>
+    </select>
+
+<script type="text/javascript">
+$(document).ready(function(e) {		
+	//no use
+	
+	try {
+		var pages = $("#pages").msDropdown(
+			{on:{change:function(data, ui) {
+					var val = data.value;
+					if(val!="")
+						window.location = val;
+				}}
+			}).data("dd");
+
+		var pagename = document.location.pathname.toString();
+		pagename = pagename.split("/");
+		pages.setIndexByValue(pagename[pagename.length-1]);
+		$("#ver").html(msBeautify.version.msDropdown);
+	} catch(e) {
+		//console.log(e);	
+	}
+	
+	$("#ver").html(msBeautify.version.msDropdown);
+		
+	//convert
+	$("select").msDropdown({roundedBorder:false});
+	$("#tech").data("dd");
+});
+function showValue(h) {
+	console.log(h.name, h.value);
+}
+$("#tech").change(function() {
+	console.log("by jquery: ", this.value);
+})
+//
+</script>
+
+<script type="text/javascript">
+      // Chained - jQuery non AJAX(J) chained selects plugin
+	  var flag_2_data = $("#flag_21 option");
+	  var flag_abbr21=[];
+      (function($) {
+        $.fn.chained = function(parent_selector, options) { 
+          return this.each(function() {
+            var self   = this;
+            var backup = $(self).clone();
+            $(parent_selector).each(function() {
+              $(this).bind("change", function() {
+                $(self).html(backup.html());
+                var selected = "";
+                $(parent_selector).each(function() {
+                  selected += "\\\\" + $(":selected", this).val();
+                });
+                selected = selected.substr(1);
+                var first = $(parent_selector).first();
+                var selected_first = $(":selected", first).val();
+                $("option", self).each(function() {
+                if (!$(this).hasClass(selected) && !$(this).hasClass(selected_first) && $(this).val() !== "") {
+                  $(this).remove();
+                }                        
+              });
+              if (1 == $("option", self).size() && $(self).val() === "") {
+                $(self).attr("disabled", "disabled");
+              } else {
+                $(self).removeAttr("disabled");
+              }
+              $(self).trigger("change");
+            });
+            if ( !$("option:selected", this).length ) {
+              $("option", this).first().attr("selected", "selected");
+            }
+            $(this).trigger("change");             
+          });
+        });
+      };
+      $.fn.chainedTo = $.fn.chained;
+      })(jQuery);
+      
+      $(document).ready(function () {
+         $("#flag_1").change(function () {
+            $("#lang_2").msDropdown({ byJson: { multiple: true } }).data("dd").destroy();
+            $("#lang_2")[0].disabled = false;
+            $("#lang_2").msDropdown({ byJson: { multiple: true} }).data("dd").refresh();
+            $("#flag_1").msDropdown().data("dd").destroy();
+            $("#flag_1").msDropdown().data("dd").refresh();
+        });
+        $("#flag_1").chained("#lang_1");
+
+        $("#lang_2").msDropdown({ byJson: { multiple: true } }).data("dd").destroy();
+        $("#lang_2")[0].disabled = true;
+        $("#lang_2").msDropdown({ byJson: { multiple: true } }).data("dd").refresh();
+		/*########################################
+		New Changes for Multiple select for Flag2
+		Please Apply new Attribute to [flag_21] select tag.
+		##########################################*/
+		$("#flag_21").msDropdown({ byJson: { multiple: true } }).data("dd").destroy();
+		$("#flag_21")[0].disabled = true;
+		$("#flag_21").msDropdown({ byJson: { multiple: true } }).data("dd").refresh();
+
+        $("#flag_21").chained("#lang_2");
+		var lastSelectedLanguage='';
+		
+		$("#lang_2").change(function () {
+            $("#flag_21").msDropdown({ byJson: { multiple: true } }).data("dd").destroy();
+            $("#flag_21").msDropdown({ byJson: { multiple: true } }).data("dd").refresh();
+			//console.log("Trigger",$(this).val(), $(this).find("option[value='"+$(this).val()+"']").attr('data-imagecss'));
+			
+        });
+        $("#flag_21").change(function () {
+			//console.log("TriggerFlag2",$(this).find("option[value='"+$(this).val()+"']").attr('data-imagecss'));
+			if($("#lang_2").find("option[value='"+$("#lang_2").val()+"']").attr('data-imagecss') == "flag xx"){
+				lastSelectedLanguage = $("#lang_2").val();
+			}
+			if($(this).val()!=null && $(this).val()!=""){
+				flag_abbr21[lastSelectedLanguage] = $(this).val();
+			}
+			
+			console.log("GetData:", flag_abbr21);
+        });
+ 
+    });  
+      checkData = function(formObj){
+		var flag1 = $('#lang_1 option:selected').attr('data-title');
+		var flag2 = [];
+		var i=0
+		$.each($('#lang_2 option:selected'), function(k,v){
+			flag2[i++] = $(v).attr('data-title'); 
+		});
+		
+		if($("#flag_1").val() == null){
+			var flag_abbr1 = $('#lang_1 option:selected').attr('data-imagecss').replace("flag ", "");
+			$("#flag_1").append("<option selected value='"+flag_abbr1+"'>"+flag_abbr1+"</option>");
+		}
+		var j = 0;
+		var flag_abbr2=[];
+		console.log("Error:", flag_abbr21);
+		$.each($('#lang_2 option:selected'), function(k, v){
+		console.log(k, $(v).attr('data-imagecss'));	
+			if($(v).attr('data-imagecss') != "flag xx"){
+				flag_abbr2[j++] = $(v).attr('data-imagecss').replace("flag ", "");
+			}else if(Object.keys(flag_abbr21).length){
+				console.log("Found",flag_abbr21[$(v).val()]);
+				
+				if(flag_abbr21[$(v).val()]!=undefined && flag_abbr21[$(v).val()].length>0){
+					flag_abbr2[j++] = flag_abbr21[$(v).val()];
+				}
+				
+			}
+		});
+		
+		$("#flag_2").val(flag_abbr2);
+		if($('#lang_1').val() == $('#lang_2').val()[0]){
+			alert("Source Language and Target Language cannot be the same. Please choose a different language.");
+		}else{
+			$('input[name="lang_name_1"]').val(flag1);
+			$('input[name="lang_name_2"]').val(flag2);
+			return true;
+		}
+		return false;
+		
+	}
+	
+	</script>
+
+</body>
+
+</html>
