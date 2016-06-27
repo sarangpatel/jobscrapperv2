@@ -51,9 +51,8 @@ class BigBlueButton
     {
         //$this->securitySalt     = $_SERVER['BBB_SECURITY_SALT'];
         //$this->bbbServerBaseUrl = $_SERVER['BBB_SERVER_BASE_URL'];
-        $this->securitySalt     = '7fa51e8ec69ea5defc4f0cd106de8b7a';
-        $this->bbbServerBaseUrl = 'http://52.39.85.16/bigbluebutton/';
-
+        $this->securitySalt     = 'b53fa16d524b5829d3e77789f7fb2eab';
+        $this->bbbServerBaseUrl = 'http://69.64.94.183/bigbluebutton/';
         $this->urlBuilder       = new UrlBuilder($this->securitySalt, $this->bbbServerBaseUrl);
     }
 
@@ -349,6 +348,8 @@ class BigBlueButton
 			//echo $url;
 			//exit;
             $data = curl_exec($ch);
+			//echo (curl_errno($ch));
+			//print_r($data);exit;
             curl_close($ch);
             if ($data) {
                 return new SimpleXMLElement($data);
