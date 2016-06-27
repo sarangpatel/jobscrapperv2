@@ -1,9 +1,7 @@
 <?php
 require_once('../vendor/autoload.php');
-session_start();
-error_reporting(-1);
-ini_set('display_errors',1);
-error_reporting(-1);
+ini_set('display_errors',0);
+error_reporting(1);
 
 ini_set('max_execution_time', 0);
 
