@@ -1,6 +1,6 @@
 <?php
 require_once('../vendor/autoload.php');
-ini_set('display_errors',1);
+ini_set('display_errors',0);
 error_reporting(1);
 
 ini_set('max_execution_time', 0);
@@ -77,8 +77,8 @@ function meeting_join(){
 	return $xml;
 }
 
-//http://localhost/jobscraperv2/bbb/api/meeting/active_meetings/
-function meeting_active_meetings(){
+//http://localhost/jobscraperv2/bbb/api/meeting/activemeetings/
+function meeting_activemeetings(){
 	$return = array();
 	$bbb = new BigBlueButton\BigBlueButton();
 	$meetingsObj = $bbb->getMeetings();
